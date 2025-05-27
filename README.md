@@ -51,13 +51,21 @@ Images Stored & Analyzed by ML Models
 
 ## 📁 Project Structure
 beautelligent/
+<br>
 ├── client/ # React Frontend
+<br>
 ├── server/ # Flask API
+<br>
 │ ├── models/ # Trained ML models
+<br>
 │ ├── routes/ # API endpoints
+<br>
 │ └── utils/ # Image preprocessing, etc.
+<br>
 ├── data/ # Dataset folders
+<br>
 ├── test/ # Test images
+<br>
 └── README.md
 
 
@@ -83,27 +91,32 @@ python app.py
 cd ../client
 npm install
 npm start
+```
 
 
 #🎯 Features Roadmap
- Skin Type Classification ✅
+ - Skin Type Classification ✅
 
- Acne Detection ✅
+ - Acne Detection ✅
 
- Pigmentation Detection 🔄
+ - Pigmentation Detection 🔄
 
- Blackhead/Whitehead Detection 🔄
+ - Blackhead/Whitehead Detection 🔄
 
- Personalized Product Suggestions 🔄
+ - Personalized Product Suggestions 🔄
+   
+---
 
 #🙋‍♀️ Meet the Creator
 Made with ❤️ by Vidhi Rawat
+🧠 ML-DS Enthusiast | Web Developer 
 
-🏆 Winner of Smart India Hackathon (SIH) 2023
-🧠 ML Enthusiast | Web Developer | Skincare Tech Creator
+---
 
 #🤝 Contribute
 PRs are welcome! If you have ideas, improvements, or want to collaborate, please open an issue or pull request.
+
+---
 
 <p align="center"><b>🌼 Beautelligent — Because your skin deserves smart care 🌼</b></p>
 
