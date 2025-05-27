@@ -94,7 +94,7 @@ npm start
 ```
 
 
-#🎯 Features Roadmap
+## 🎯 Features Roadmap
  - Skin Type Classification ✅
 
  - Acne Detection ✅
@@ -107,13 +107,13 @@ npm start
    
 ---
 
-#🙋‍♀️ Meet the Creator
+## 🙋‍♀️ Meet the Creator
 Made with ❤️ by Vidhi Rawat
 🧠 ML-DS Enthusiast | Web Developer 
 
 ---
 
-#🤝 Contribute
+## 🤝 Contribute
 PRs are welcome! If you have ideas, improvements, or want to collaborate, please open an issue or pull request.
 
 ---
