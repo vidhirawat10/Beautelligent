@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.main-container {
+  background-color: #e3b7c1;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #fddfdc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-weight: bold;
+}
+
+.logo {
+  color: #c74eb7;
+  font-size: 1.4rem;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.icons .icon {
+  margin-left: 15px;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.main-heading {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.highlight-heading {
+  font-size: 2rem;
+  color: #b752b7;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.cta-button {
+  background-color: #b752b7;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-top: 30px;
+  cursor: pointer;
+}
