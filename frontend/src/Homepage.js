@@ -4,7 +4,7 @@ import "./Homepage.css"; // ✅ Correct CSS import
 export default function BeautelligentHomePage() {
   // Combine all items for the scrolling section
   const scrollItems = [
-     "SkinType", "Acne", "Pigmentation", "Spots", "DarkCircles",
+   "SkinType", "Acne", "Pigmentation", "Spots", "DarkCircles",
     "Blackheads", "Whiteheads", "Texture"
   ];
 
@@ -64,7 +64,7 @@ export default function BeautelligentHomePage() {
         </div>
       </section>
 
-      {/* New Section: Scrolling Features/Analysis Types */}
+      {/* Scrolling Features/Analysis Types Section */}
       <section className="features-scroll-section">
         <div className="scroll-container">
           {duplicatedScrollItems.map((item, index) => (
@@ -72,6 +72,33 @@ export default function BeautelligentHomePage() {
               {item}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* New Section: Why Beautelligent Worth Using */}
+      <section className="why-beautelligent-section">
+        <h2 className="section-title">Why is Beautelligent worth using?</h2>
+        <div className="feature-cards-container">
+          <div className="feature-card">
+            <div className="card-icon">🧠</div>
+            <h3 className="card-title">Smart</h3>
+            <p className="card-description">Beautelligent leverages powerful AI and deep learning models built through extensive training on real skin datasets. Its accuracy rivals that of professional dermatologists in detecting skin concerns.</p>
+          </div>
+          <div className="feature-card">
+            <div className="card-icon">⏱️</div>
+            <h3 className="card-title">Instant</h3>
+            <p className="card-description">Just click on "Analyze My Skin", and within seconds, Beautelligent identifies skin type, acne zones, and pigmentation — all in real time from live camera input.</p>
+          </div>
+          <div className="feature-card">
+            <div className="card-icon">📱</div>
+            <h3 className="card-title">Accessible</h3>
+            <p className="card-description">Beautelligent works seamlessly on desktop or mobile. Access expert-like skincare insights anytime, anywhere — no appointments, no delays.</p>
+          </div>
+          <div className="feature-card">
+            <div className="card-icon">💸</div>
+            <h3 className="card-title">Affordable</h3>
+            <p className="card-description">Designed for both individual users and skincare businesses, Beautelligent offers flexible pricing with a no-code setup. It’s a cost-effective tool to deliver customized skincare advice without breaking the bank.</p>
+          </div>
         </div>
       </section>
     </div>
