@@ -1,15 +1,35 @@
-import React from "react";
-import "./Homepage.css"; // ✅ Correct CSS import
+import React, { useState } from "react"; // Import useState
+import "./Homepage.css"; // Correct CSS import
+import trackingImage from './assets/img1.jpg'; // Placeholder image path
 
 export default function BeautelligentHomePage() {
   // Combine all items for the scrolling section
   const scrollItems = [
-   "SkinType", "Acne", "Pigmentation", "Spots", "DarkCircles",
+    "SkinType", "Acne", "Pigmentation", "Spots", "DarkCircles",
     "Blackheads", "Whiteheads", "Texture"
   ];
 
   // Duplicate the items to ensure a seamless continuous loop
   const duplicatedScrollItems = [...scrollItems, ...scrollItems];
+
+  // State for the "Our Technology" section tabs
+  const [activeTab, setActiveTab] = useState('Tracking');
+
+  // Content for each tab
+  const tabContent = {
+    Tracking: {
+      description: "Our face tracking technology is designed fully in-house. As the very first trackers in the world to run a real-time augmented reality experience on the web, it is incredibly lightweight and fast. With our specialization in beauty, we can build highly accurate trackers by skipping all the extra weight you'll find among the competition. All of this is done while testing and validating our results on diverse and global datasets to ensure what we build is fair for everyone.",
+      image: trackingImage // Use the imported image
+    },
+    Analysis: {
+      description: "Our AI analysis engine meticulously examines skin conditions, identifying concerns like hyperpigmentation, redness, and fine lines with unparalleled precision. It goes beyond surface-level assessment to provide actionable insights for personalized skincare routines, learning and adapting to individual skin behaviors.",
+      image: trackingImage // Use the imported image
+    },
+    Rendering: {
+      description: "Experience your future skin. Our rendering technology visualizes potential improvements from recommended products, allowing users to see simulated results in stunning detail. This immersive experience helps in making informed decisions by bridging the gap between current condition and desired outcomes.",
+      image: trackingImage // Use the imported image
+    },
+  };
 
   return (
     <div className="main-container">
@@ -40,7 +60,7 @@ export default function BeautelligentHomePage() {
         <button className="cta-button">Start Analysis</button>
       </section>
 
-      {/* New Section: Beautelligent Introduction and Features */}
+      {/* Beautelligent Introduction and Features Section */}
       <section className="beautelligent-section">
         <div className="beautelligent-content-left">
           <h2 className="beautelligent-heading">
@@ -75,7 +95,7 @@ export default function BeautelligentHomePage() {
         </div>
       </section>
 
-      {/* New Section: Why Beautelligent Worth Using */}
+      {/* Why Beautelligent Worth Using Section */}
       <section className="why-beautelligent-section">
         <h2 className="section-title">Why is Beautelligent worth using?</h2>
         <div className="feature-cards-container">
@@ -101,6 +121,41 @@ export default function BeautelligentHomePage() {
           </div>
         </div>
       </section>
+
+      {/* New Section: Our Technology */}
+      <section className="our-technology-section">
+        <h2 className="section-title">Our Technology</h2>
+        <div className="technology-tabs-container">
+          <button
+            className={`tech-tab ${activeTab === 'Tracking' ? 'active' : ''}`}
+            onClick={() => setActiveTab('Tracking')}
+          >
+            Tracking
+          </button>
+          <button
+            className={`tech-tab ${activeTab === 'Analysis' ? 'active' : ''}`}
+            onClick={() => setActiveTab('Analysis')}
+          >
+            Analysis
+          </button>
+          <button
+            className={`tech-tab ${activeTab === 'Rendering' ? 'active' : ''}`}
+            onClick={() => setActiveTab('Rendering')}
+          >
+            Rendering
+          </button>
+        </div>
+
+        <div className="tech-content-area">
+          <div className="tech-description-box">
+            <p>{tabContent[activeTab].description}</p>
+          </div>
+          <div className="tech-image-box">
+            <img src={tabContent[activeTab].image} alt={`${activeTab} Technology`} className="tech-image" />
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
