@@ -273,7 +273,7 @@ body {
 /* --- New Section Styles: Our Technology --- */
 .our-technology-section {
   background-color: #dfbfc7; /* Background color from your latest update */
-  padding: 40px 20px;
+  padding: 20px 10px;
   text-align: center;
   color: #333;
 }
@@ -322,7 +322,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
@@ -339,7 +339,7 @@ body {
 
 .tech-image-box {
   flex: 0 0 600px; /* Fixed width for the image container */
-  max-width: 400px;
+  max-width: 300px;
   border-radius: 20px;
   overflow: hidden; /* Ensures image respects border-radius */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
@@ -360,15 +360,14 @@ body {
   }
   .tech-content-area {
     flex-direction: column; /* Stack description and image vertically */
-    gap: 30px;
+    gap: 10px;
     padding: 0 20px;
   }
   .tech-description-box {
     text-align: center;
   }
   .tech-image-box {
-    max-width: 100%; /* Allow image to take full width */
-    flex: 1 1 auto;
+    display: none;
   }
 }
 
@@ -378,11 +377,14 @@ body {
     padding: 6px 12px;
   }
   .technology-tabs-container {
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 30px;
   }
   .tech-description-box {
     font-size: 1.1rem;
+  }
+    .tech-image-box {
+    display: none;
   }
 }
 
@@ -400,5 +402,8 @@ body {
   }
   .tech-description-box {
     font-size: 0.95rem;
+  }
+    .tech-image-box {
+    display: none;
   }
 }
