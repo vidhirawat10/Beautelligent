@@ -1,74 +1,261 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrollbar from the marquee */
 }
 
 .main-container {
-  background-color: #e3b7c1;
+  background-color: #e3b7c1; /* Matches existing pinkish background */
   min-height: 100vh;
   padding: 0;
 }
 
 .navbar {
-  background-color: #fddfdc;
+  background-color: #fddfdc; /* Matches existing light pink navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-weight: bold;
 }
 
 .logo {
-  color: #c74eb7;
-  font-size: 1.4rem;
+  color: #c74eb7; /* Matches existing logo color */
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 .nav-links a {
-  margin-left: 20px;
+  font-size: 1.3rem;
+  margin-left: 30px;
   color: black;
   text-decoration: none;
 }
 
 .icons .icon {
+  font-size: 1.5rem;
   margin-left: 15px;
 }
 
 .hero-section {
   text-align: center;
-  padding: 80px 20px;
+  padding: 50px 20px;
 }
 
 .tagline {
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 2rem;
+  color: #333;
 }
 
 .main-heading {
-  font-size: 2rem;
-  margin: 10px 0;
+  font-size: 2.2rem;
+  margin: 15px 0;
 }
 
 .highlight-heading {
-  font-size: 2rem;
-  color: #b752b7;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #d42bd4; /* Matches existing highlight color */
+  margin-bottom: 10px;
 }
 
 .description {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: #333;
 }
 
 .cta-button {
-  background-color: #b752b7;
+  background-color: #b752b7; /* Matches existing CTA button color */
   color: white;
   padding: 10px 25px;
   border: none;
   border-radius: 25px;
-  font-size: 1rem;
-  margin-top: 30px;
+  font-size: 1.5rem;
+  margin-top: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #9f3e9f;
+}
+
+/* --- New Section Styles: Beautelligent Introduction and Features --- */
+.beautelligent-section {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 50px; /* Space between the two columns */
+
+  padding: 80px 40px; /* Adjust padding as needed */
+
+  background-color: #dfbfc7; /* Keep the consistent background */
+
+  color: #333; /* Default text color */
+
+}
+
+.beautelligent-content-left {
+  flex: 1; /* Allows it to take available space */
+  max-width: 600px; /* Limit width for readability */
+}
+
+.beautelligent-heading {
+  font-size: 2.8rem;
+  color: #c74eb7; /* Using a prominent brand color */
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.beautelligent-heading strong {
+  color: #d42bd4; /* Highlight "Beautelligent" */
+}
+
+.beautelligent-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.beautelligent-cta-button {
+  background-color: #b752b7; /* Consistent button color */
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.beautelligent-cta-button:hover {
+  background-color: #9f3e9f; /* Darker shade on hover */
+}
+
+.beautelligent-features-box {
+  background-color: white; /* White background for the feature box */
+  border-radius: 20px; /* Rounded corners */
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  flex: 0 0 500px; /* Fixed width for the box, adjust as needed */
+  max-width: 500px;
+}
+
+.beautelligent-features-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.beautelligent-features-list li {
+  font-size: 1.2rem;
+  margin-bottom: 15px; /* Space between list items */
+  line-height: 1.5;
+  color: #555; /* Slightly softer text color for list items */
+}
+
+/* --- New Section Styles: Scrolling Features/Analysis Types --- */
+.features-scroll-section {
+  background-color: #e3b7c1; /* Light pink background, consistent with navbar */
+  padding: 40px 0; /* Vertical padding, no horizontal */
+  overflow: hidden; /* Hide anything outside the scroll container */
+  position: relative; /* Needed for pseudo-elements if we add fading edges later */
+}
+
+.scroll-container {
+  display: flex; /* Arrange items in a row */
+  white-space: nowrap; /* Prevent items from wrapping */
+  animation: scrollLeft 10s linear infinite; /* Adjust duration for speed */
+  padding-left: 1vw; /* Start elements off-screen to the right */
+  /* This effectively makes the start of the animation always look like it's coming from off-screen */
+}
+
+.scroll-item {
+  display: inline-block; /* Treat each item as a block, but allow it in line */
+  /* background-color: #c74eb7;  A prominent brand color for the tags */
+  color: rgb(78, 77, 77);
+  padding: 10px 25px;
+  border-radius: 10px; /* Rounded pill shape */
+  margin: 0 20px; /* Space between items */
+  font-size: 2.5rem;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+/* Specific styling for the header items if desired */
+.scroll-item:first-child,
+.scroll-item:nth-child(8) { /* Targeting "Core Features" and "Types of Analysis" */
+  color: rgb(78, 77, 77);
+  font-size: 2.5rem;
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+
+
+/* Keyframes for the scrolling animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0); /* Start from current position */
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll left by half the container's width */
+  }
+}
+
+
+/* Basic responsiveness for existing sections */
+@media (max-width: 1024px) {
+  .beautelligent-section {
+    flex-direction: column; /* Stack columns on smaller screens */
+    gap: 40px;
+    padding: 60px 20px;
+  }
+
+  .beautelligent-content-left,
+  .beautelligent-features-box {
+    max-width: 100%; /* Allow full width */
+    text-align: center; /* Center content */
+  }
+
+  .beautelligent-heading {
+    font-size: 2.2rem;
+  }
+
+  .beautelligent-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .beautelligent-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .beautelligent-section {
+    padding: 40px 15px;
+  }
+  .beautelligent-features-box {
+    padding: 25px;
+  }
+  .beautelligent-features-list li {
+    font-size: 1rem;
+  }
+  .scroll-item {
+    font-size: 1rem;
+    padding: 8px 20px;
+    margin: 0 10px;
+  }
+  .scroll-item:first-child,
+  .scroll-item:nth-child(12) {
+    font-size: 1.1rem;
+    padding: 10px 25px;
+  }
 }
