@@ -270,7 +270,7 @@ body {
   color: #393838; /* Your updated color */
 }
 
-/* --- New Section Styles: Our Technology --- */
+/* --- Our Technology Section --- */
 .our-technology-section {
   background-color: #dfbfc7; /* Background color from your latest update */
   padding: 20px 10px;
@@ -352,8 +352,187 @@ body {
   border-radius: 20px; /* Apply border-radius to image as well */
 }
 
-/* Responsive adjustments for Our Technology section */
+/* --- New Section Styles: How It Works: Step-by-Step --- */
+.how-it-works-section {
+  background-color: #e3b7c1; /* Light pink background from your navbar/feature box */
+  padding: 80px 40px;
+  text-align: center;
+  color: #333;
+}
+
+.how-it-works-title {
+  color: rgb(36, 35, 35); /* Consistent title color */
+  margin-bottom: 60px;
+  font-size: 3rem; /* Same as other section titles */
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow steps to wrap on smaller screens */
+  gap: 30px; /* Space between step cards */
+  max-width: 1200px; /* Limit overall width */
+  margin: 0 auto; /* Center the container */
+}
+
+.step-card {
+  background-color: #dfbfc7; /* White background for each step card */
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  flex: 1 1 250px; /* Flexible width, min 250px */
+  max-width: 240px; /* Max width for individual cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-image {
+  width: 100%; /* Image fills the card width */
+  max-width: 240px; /* Adjust as needed */
+  height: auto;
+  border-radius: 10px; /* Slightly rounded corners for images */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for images */
+}
+
+/* --- New Footer Styles --- */
+.site-footer {
+  background-color: #dfbfc7; /* Using a consistent light pink from your palette */
+  color: #333;
+  padding: 60px 40px 20px; /* Top, horizontal, bottom padding */
+  font-size: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  gap: 40px; /* Space between footer columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px; /* Space before copyright */
+}
+
+.footer-brand {
+  flex: 1 1 250px; /* Allows brand section to take space */
+  text-align: left;
+}
+
+.footer-logo {
+  color: #c74eb7; /* Consistent logo color */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.footer-links-group {
+  flex: 1 1 150px; /* Allows link columns to grow/shrink */
+  text-align: left;
+}
+
+.footer-links-group h3 {
+  font-size: 1.3rem;
+  color: #c74eb7; /* Consistent heading color */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.footer-links-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-group li {
+  margin-bottom: 10px;
+}
+
+.footer-links-group a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links-group a:hover {
+  color: #d42bd4; /* Consistent hover color */
+}
+
+.footer-social {
+  flex: 1 1 200px;
+  text-align: left;
+}
+
+.footer-social h3 {
+  font-size: 1.3rem;
+  color: #c74eb7;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.social-icons .icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  color: #333; /* Default icon color */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover .icon {
+  color: #d42bd4; /* Hover color for icons */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Subtle separator line */
+  color: #555;
+  font-size: 0.9rem;
+}
+
+
+/* --- Basic responsiveness for all sections (including new ones) --- */
 @media (max-width: 1024px) {
+  .beautelligent-section {
+    flex-direction: column; /* Stack columns on smaller screens */
+    gap: 40px;
+    padding: 60px 20px;
+  }
+
+  .beautelligent-content-left,
+  .beautelligent-features-box {
+    max-width: 100%; /* Allow full width */
+    text-align: center; /* Center content */
+  }
+
+  .beautelligent-heading {
+    font-size: 2.2rem;
+  }
+
+  .beautelligent-description {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .feature-cards-container {
+    padding: 0 15px;
+  }
+
+  /* Our Technology Responsive */
   .tech-tab {
     font-size: 1.5rem;
     padding: 8px 15px;
@@ -367,11 +546,56 @@ body {
     text-align: center;
   }
   .tech-image-box {
-    display: none;
+    display: none; /* Hide image on smaller screens as per your update */
+  }
+
+  /* How It Works Responsive */
+  .how-it-works-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  .step-card {
+    flex: 1 1 45%; /* Two cards per row */
+    max-width: 45%;
+  }
+
+  /* Footer Responsive */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .footer-brand,
+  .footer-links-group,
+  .footer-social {
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center; /* Center icons when stacked */
+    display: flex;
   }
 }
 
 @media (max-width: 768px) {
+  .beautelligent-heading {
+    font-size: 1.8rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .feature-card {
+    flex: 1 1 90%; /* Allow cards to take more width on tablets */
+    max-width: 400px; /* Max width for card */
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .card-description {
+    font-size: 1rem;
+  }
+
+  /* Our Technology Responsive */
   .tech-tab {
     font-size: 1.2rem;
     padding: 6px 12px;
@@ -383,12 +607,64 @@ body {
   .tech-description-box {
     font-size: 1.1rem;
   }
-    .tech-image-box {
-    display: none;
+  .tech-image-box {
+    display: none; /* Hide image on smaller screens */
+  }
+
+  /* How It Works Responsive */
+  .how-it-works-section {
+    padding: 60px 20px;
+  }
+  .step-card {
+    flex: 1 1 90%; /* One card per row on very small tablets */
+    max-width: 400px;
+  }
+  /* Removed .step-number and .step-description styles as they are no longer in HTML */
+
+  /* Footer Responsive */
+  .site-footer {
+    padding: 40px 20px 15px;
   }
 }
 
 @media (max-width: 480px) {
+  .beautelligent-section {
+    padding: 40px 15px;
+  }
+  .beautelligent-features-box {
+    padding: 25px;
+  }
+  .beautelligent-features-list li {
+    font-size: 1rem;
+  }
+  .scroll-item {
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin: 0 8px;
+  }
+  .scroll-item:first-child,
+  .scroll-item:nth-child(8) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  .why-beautelligent-section {
+    padding: 50px 20px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .feature-card {
+    padding: 25px;
+  }
+  .card-icon {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Our Technology Responsive */
   .tech-tab {
     font-size: 1rem;
     padding: 5px 10px;
@@ -403,7 +679,44 @@ body {
   .tech-description-box {
     font-size: 0.95rem;
   }
-    .tech-image-box {
-    display: none;
+  .tech-image-box {
+    display: none; /* Hide image on smaller screens */
+  }
+
+  /* How It Works Responsive */
+  .how-it-works-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .steps-container {
+    gap: 20px;
+  }
+  .step-card {
+    padding: 20px;
+    max-width: 100%; /* Full width on smallest screens */
+  }
+  .step-image {
+    max-width: 150px;
+  }
+
+  /* Footer Responsive */
+  .site-footer {
+    padding: 30px 15px 10px;
+  }
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+  .footer-links-group h3,
+  .footer-social h3 {
+    font-size: 1.1rem;
+  }
+  .footer-links-group li,
+  .footer-tagline,
+  .footer-bottom p {
+    font-size: 0.85rem;
+  }
+  .social-icons .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
   }
 }

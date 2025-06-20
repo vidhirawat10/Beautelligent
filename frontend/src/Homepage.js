@@ -1,6 +1,13 @@
-import React, { useState } from "react"; // Import useState
-import "./Homepage.css"; // Correct CSS import
-import trackingImage from './assets/img1.jpg'; // Placeholder image path
+import React, { useState } from "react";
+import "./Homepage.css";
+import trackingImage from './assets/img1.jpg'; // Placeholder image path for Our Technology section
+
+// Placeholder imports for step images (YOU NEED TO REPLACE THESE WITH ACTUAL PATHS)
+import step1Image from './assets/step1.png'; // Path for your Step 1 image
+import step2Image from './assets/step2.png'; // Path for your Step 2 image
+import step3Image from './assets/step3.png'; // Path for your Step 3 image
+import step4Image from './assets/step4.png'; // Path for your Step 4 image
+
 
 export default function BeautelligentHomePage() {
   // Combine all items for the scrolling section
@@ -30,6 +37,8 @@ export default function BeautelligentHomePage() {
       image: trackingImage // Use the imported image
     },
   };
+
+  const currentYear = new Date().getFullYear(); // Added back for copyright
 
   return (
     <div className="main-container">
@@ -122,7 +131,7 @@ export default function BeautelligentHomePage() {
         </div>
       </section>
 
-      {/* New Section: Our Technology */}
+      {/* Our Technology Section */}
       <section className="our-technology-section">
         <h2 className="section-title">Our Technology</h2>
         <div className="technology-tabs-container">
@@ -155,6 +164,68 @@ export default function BeautelligentHomePage() {
           </div>
         </div>
       </section>
+
+      {/* New Section: How It Works: Step-by-Step */}
+      <section className="how-it-works-section">
+        <h2 className="section-title how-it-works-title">Tailors skincare recommendations to suit each customer's unique needs</h2>
+        <div className="steps-container">
+          <div className="step-card">
+            <img src={step1Image} alt="Step 1" className="step-image" />
+          </div>
+          <div className="step-card">
+            <img src={step2Image} alt="Step 2" className="step-image" />
+          </div>
+          <div className="step-card">
+            <img src={step3Image} alt="Step 3" className="step-image" />
+          </div>
+          <div className="step-card">
+            <img src={step4Image} alt="Step 4" className="step-image" />
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="site-footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <div className="logo footer-logo">BEAUTELLIGENT</div>
+            <p className="footer-tagline">Smart Technology, Timeless Beauty</p>
+          </div>
+
+          <div className="footer-links-group">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/technology">Our Technology</a></li>
+              <li><a href="/products">Products</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-links-group">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-social">
+            <h3>Follow Us</h3>
+            <div className="social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span className="icon">📘</span></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span className="icon">📸</span></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><span className="icon">🐦</span></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span className="icon">💼</span></a>
+            </div>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; {currentYear} Beautelligent. All rights reserved.</p>
+        </div>
+      </footer>
 
     </div>
   );
