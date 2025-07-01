@@ -141,3 +141,71 @@ html, body, #root {
   z-index: 1; /* Keep leaves behind the login box */
   pointer-events: none; 
 }
+
+@media (max-width: 1024px){
+
+  .left_illustration{
+  position: absolute;
+  left: 50px;
+  bottom: 30px;
+  width: 70%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+  }
+
+  .right_illustration{
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+  width: 70%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+}
+}
+
+@media (max-width: 768px){
+    .left_illustration{
+  position: absolute;
+  left: 50px;
+  bottom: 30px;
+  width: 70%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+  }
+
+  .right_illustration{
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+  width: 70%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+}
+}
+
+@media (max-width: 480px){
+
+      .left_illustration{
+  position: absolute;
+  left: 30px;
+  top: -30px;
+  width: 85%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+  }
+
+  .right_illustration{
+  position: absolute;
+  right: 55px;
+  bottom: 5px;
+  width: 67%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+}
+}
