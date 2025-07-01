@@ -1,4 +1,6 @@
+// src/Homepage.js
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'; // Import Link
 import "./Homepage.css";
 import trackingImage from './assets/img1.jpg'; // Placeholder image path for Our Technology section
 
@@ -45,15 +47,17 @@ export default function BeautelligentHomePage() {
       <nav className="navbar">
         <div className="logo">BEAUTELLIGENT</div>
         <div className="nav-links">
-          <a href="/home">Home</a>
-          <a href="/technology">Our Technology</a>
-          <a href="/products">Products</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Personalized Recommendations</a>
+          {/* Change these to Link components if you set up more routes */}
+          <Link to="/">Home</Link>
+          <Link to="/technology">Our Technology</Link> {/* Assuming you'll add this route */}
+          <Link to="/products">Products</Link> {/* Assuming you'll add this route */}
+          <Link to="/blog">Blog</Link> {/* Assuming you'll add this route */}
+          <Link to="/contact">Personalized Recommendations</Link> {/* Assuming you'll add this route */}
         </div>
         <div className="icons">
           <span className="icon">🔍</span>
-          <span className="icon">👤</span>
+          {/* Changed <a> to <Link> for navigation */}
+          <Link to="/login" className="icon" aria-label="Profile">👤</Link>
           <span className="icon">🛒</span>
         </div>
       </nav>
@@ -195,20 +199,22 @@ export default function BeautelligentHomePage() {
           <div className="footer-links-group">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/home">Home</a></li>
-              <li><a href="/technology">Our Technology</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/blog">Blog</a></li>
+              {/* Change these to Link components if you set up more routes */}
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/technology">Our Technology</Link></li>
+              <li><Link to="/products">Products</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
             </ul>
           </div>
 
           <div className="footer-links-group">
             <h3>Support</h3>
             <ul>
-              <li><a href="/contact">Contact Us</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/terms">Terms of Service</a></li>
+              {/* Change these to Link components if you set up more routes */}
+              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
+              <li><Link to="/terms">Terms of Service</Link></li>
             </ul>
           </div>
 

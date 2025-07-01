@@ -1,0 +1,236 @@
+/* General container for the analysis page */
+.analysis-page-container {
+  min-height: 100vh;
+  background-color: #e3b7c1; /* Consistent with your homepage background */
+  overflow-x: hidden;
+}
+
+/* --- Navbar specific to Analysis Page (can be reused) --- */
+.analysis-navbar {
+  background-color: #fddfdc; /* Matches existing light pink navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-weight: bold;
+}
+
+.analysis-logo {
+  color: #c74eb7; /* Matches existing logo color */
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.analysis-nav-links a {
+  font-size: 1.3rem;
+  margin-left: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.analysis-icons .icon {
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+/* --- Hero Section for Analysis Page --- */
+.analysis-hero-section {
+  text-align: center;
+  padding: 50px 20px 80px; /* Increased bottom padding to give space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  min-height: calc(100vh - 90px); /* Adjust based on navbar height */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* For overlay */
+  overflow: hidden; /* Ensure background image doesn't cause overflow */
+}
+
+/* Optional: Add a subtle overlay to the background image for better text readability */
+.analysis-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(227, 183, 193, 0.6); /* Semi-transparent pinkish overlay */
+  z-index: 1; /* Place above background image but below content */
+}
+
+.analysis-main-heading,
+.analysis-tagline,
+.sd-analysis-card {
+  position: relative; /* Bring content above the overlay */
+  z-index: 2;
+}
+
+.analysis-main-heading {
+  font-size: 3rem;
+  color: #333; /* Darker text for readability over background */
+  margin-bottom: 10px;
+  margin-top: 50px; /* Space from navbar */
+}
+
+.analysis-tagline {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* --- SD Skin Analysis Card --- */
+.sd-analysis-card {
+  background-color: #fddfdc; /* Light pink background for the card */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  max-width: 450px; /* Limit card width */
+  width: 90%; /* Responsive width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sd-analysis-title {
+  font-size: 2rem;
+  color: #c74eb7; /* Consistent heading color */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.sd-analysis-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 350px; /* Limit description width for readability */
+}
+
+.diagnostic-button {
+  background-color: #b752b7; /* Consistent button color */
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%; /* Make buttons take more width in the card */
+  margin-bottom: 15px; /* Space between buttons */
+}
+
+.diagnostic-button:last-child {
+  margin-bottom: 0; /* No margin for the last button */
+}
+
+.diagnostic-button:hover {
+  background-color: #9f3e9f;
+}
+
+/* --- Responsive Adjustments for Analysis Page --- */
+@media (max-width: 1024px) {
+  .analysis-navbar {
+    padding: 15px 20px;
+  }
+  .analysis-nav-links a {
+    margin-left: 15px;
+    font-size: 1.1rem;
+  }
+  .analysis-main-heading {
+    font-size: 2.5rem;
+  }
+  .analysis-tagline {
+    font-size: 1.3rem;
+  }
+  .sd-analysis-card {
+    padding: 30px;
+  }
+  .sd-analysis-title {
+    font-size: 1.8rem;
+  }
+  .sd-analysis-description {
+    font-size: 1rem;
+  }
+  .diagnostic-button {
+    font-size: 1.1rem;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .analysis-navbar {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+  .analysis-logo {
+    margin-bottom: 10px;
+  }
+  .analysis-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .analysis-nav-links a {
+    margin: 5px 10px;
+    font-size: 1rem;
+  }
+  .analysis-icons {
+    margin-top: 10px;
+  }
+  .analysis-main-heading {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  .analysis-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .sd-analysis-card {
+    width: 95%;
+    padding: 25px;
+  }
+  .sd-analysis-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .analysis-navbar {
+    padding: 10px 5px;
+  }
+  .analysis-logo {
+    font-size: 1.5rem;
+  }
+  .analysis-nav-links a {
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+  .analysis-icons .icon {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  .analysis-main-heading {
+    font-size: 1.8rem;
+  }
+  .analysis-tagline {
+    font-size: 1rem;
+  }
+  .sd-analysis-card {
+    padding: 20px;
+  }
+  .sd-analysis-title {
+    font-size: 1.3rem;
+  }
+  .sd-analysis-description {
+    font-size: 0.9rem;
+  }
+  .diagnostic-button {
+    font-size: 1rem;
+    padding: 8px 20px;
+    width: 90%;
+  }
+}

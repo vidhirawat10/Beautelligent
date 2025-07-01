@@ -1,0 +1,143 @@
+/* src/LoginPage.css */
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%);
+  position: relative; /* Crucial for positioning the absolute children (leaves) */
+  overflow: hidden; /* Hide any overflow if leaves extend slightly beyond viewport */
+}
+
+/* Base style for all leaves */
+.leaf {
+  position: absolute;
+  width: 100%; /* Adjust size as needed */
+  height: auto;
+  z-index: 0; /* Keep leaves behind the login box */
+  pointer-events: none; /* Prevent leaves from interfering with clicks */
+}
+
+/* Top-Left Leaf */
+.leaf.top-left {
+  top: 20px; /* Adjust distance from top */
+  left: 20px; /* Adjust distance from left */
+  transform: rotate(0deg); /* Or slightly adjust if needed */
+}
+
+/* Top-Right Leaf */
+.leaf.top-right {
+  top: 20px; /* Adjust distance from top */
+  right: 20px; /* Adjust distance from right */
+  transform: rotate(90deg); /* Rotate to match your design */
+}
+
+/* Bottom-Left Leaf */
+.leaf.bottom-left {
+  bottom: 20px; /* Adjust distance from bottom */
+  left: 20px; /* Adjust distance from left */
+  transform: rotate(-90deg); /* Rotate to match your design */
+}
+
+/* Bottom-Right Leaf */
+.leaf.bottom-right {
+  bottom: 20px; /* Adjust distance from bottom */
+  right: 20px; /* Adjust distance from right */
+  transform: rotate(180deg); /* Rotate to match your design */
+}
+
+
+/* Ensure body and html take full height if they don't already */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Rest of your existing CSS for login-box and its elements remains the same */
+.login-box h2 {
+  margin-bottom: 30px;
+  color: #eb5672;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: bold;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.input-group input[type="email"],
+.input-group input[type="password"] {
+  width: 300px;
+  padding: 12px 15px;
+  background-color: #fff2f6;
+  border: 2px solid #e48294 ;
+  border-radius: 20px;
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+  border-color: #e48294; /* Beautelligent brand color (example) */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2);
+}
+
+.login-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #e48294; /* Beautelligent brand color (example) */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #eb5672; /* Darker shade on hover */
+}
+
+.signup-link {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #73414a;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #eb5672;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.left_illustration{
+  position: absolute;
+  left: 50px;
+  bottom: 30px;
+  width: 55%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+}
+
+.right_illustration{
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+  width: 55%; 
+  height: auto;
+  z-index: 1; /* Keep leaves behind the login box */
+  pointer-events: none; 
+}
