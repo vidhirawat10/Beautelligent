@@ -1,6 +1,6 @@
 // src/Homepage.js
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'; // Import Link
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 import "./Homepage.css";
 import trackingImage from './assets/img1.jpg'; // Placeholder image path for Our Technology section
 
@@ -12,6 +12,8 @@ import step4Image from './assets/step4.png'; // Path for your Step 4 image
 
 
 export default function BeautelligentHomePage() {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   // Combine all items for the scrolling section
   const scrollItems = [
     "SkinType", "Acne", "Pigmentation", "Spots", "DarkCircles",
@@ -42,21 +44,24 @@ export default function BeautelligentHomePage() {
 
   const currentYear = new Date().getFullYear(); // Added back for copyright
 
+  // Function to handle button click and navigate
+  const handleStartAnalysisClick = () => {
+    navigate('/analysis');
+  };
+
   return (
     <div className="main-container">
       <nav className="navbar">
         <div className="logo">BEAUTELLIGENT</div>
         <div className="nav-links">
-          {/* Change these to Link components if you set up more routes */}
           <Link to="/">Home</Link>
-          <Link to="/technology">Our Technology</Link> {/* Assuming you'll add this route */}
-          <Link to="/products">Products</Link> {/* Assuming you'll add this route */}
-          <Link to="/blog">Blog</Link> {/* Assuming you'll add this route */}
-          <Link to="/contact">Personalized Recommendations</Link> {/* Assuming you'll add this route */}
+          <Link to="/technology">Our Technology</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/contact">Personalized Recommendations</Link>
         </div>
         <div className="icons">
           <span className="icon">🔍</span>
-          {/* Changed <a> to <Link> for navigation */}
           <Link to="/login" className="icon" aria-label="Profile">👤</Link>
           <span className="icon">🛒</span>
         </div>
@@ -70,7 +75,8 @@ export default function BeautelligentHomePage() {
           Empower your customers to achieve healthier skin with tailored product recommendations,
           all accessible with a simple tap
         </p>
-        <button className="cta-button">Start Analysis</button>
+        {/* Kept as button and added onClick handler */}
+        <button className="cta-button" onClick={handleStartAnalysisClick}>Start Analysis</button>
       </section>
 
       {/* Beautelligent Introduction and Features Section */}
@@ -199,7 +205,6 @@ export default function BeautelligentHomePage() {
           <div className="footer-links-group">
             <h3>Quick Links</h3>
             <ul>
-              {/* Change these to Link components if you set up more routes */}
               <li><Link to="/">Home</Link></li>
               <li><Link to="/technology">Our Technology</Link></li>
               <li><Link to="/products">Products</Link></li>
@@ -210,7 +215,6 @@ export default function BeautelligentHomePage() {
           <div className="footer-links-group">
             <h3>Support</h3>
             <ul>
-              {/* Change these to Link components if you set up more routes */}
               <li><Link to="/contact">Contact Us</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/privacy">Privacy Policy</Link></li>
