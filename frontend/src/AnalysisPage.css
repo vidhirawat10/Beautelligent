@@ -1,7 +1,7 @@
 /* General container for the analysis page */
 .analysis-page-container {
   min-height: 100vh;
-  background: linear-gradient(to top, #f6cfda 70%, #de94ae 100%); /* Light background from image */
+  background: linear-gradient(to top, #f6cfda 70%, #de94ae 100%);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,8 @@
   align-items: center;
   padding: 20px 40px;
   font-weight: bold;
+  z-index: 10; /* Ensure navbar stays on top */
+  position: relative; /* Needed for z-index to work */
 }
 
 .analysis-logo {
@@ -35,16 +37,44 @@
   margin-left: 15px;
 }
 
-/* --- New Main Content Section (Discover a New You) --- */
+/* Decorative leaves */
+.leaf {
+  position: absolute;
+  width: 100%; /* Adjusted from 100% to a fixed size for decorative leaves */
+  height: auto;
+  z-index: 0; /* Keep leaves behind the login box */
+  pointer-events: none; /* Prevent leaves from interfering with clicks */
+}
+
+/* Top-Left Leaf */
+.leaf.top-left {
+  top: 100px; /* Adjust distance from top */
+  left: -10px; /* Adjust distance from left */
+  transform: rotate(0deg); /* Or slightly adjust if needed */
+}
+
+
+/* --- Main Content Section (Discover a New You) --- */
 .discover-new-you-section {
   flex-grow: 1; /* Allows section to take available vertical space */
   display: flex;
+  flex-direction: column; /* CRITICAL: Keep this for vertical stacking */
   justify-content: center;
   align-items: center; /* Vertically center the content */
-  padding: 50px 0; /* Add vertical padding */
+  padding: 50px 20px; /* Adjusted padding to be consistent with vertical center */
   max-width: 1200px; /* Limit overall width */
   margin: 0 auto; /* Center the section */
   box-sizing: border-box; /* Include padding in element's total width and height */
+  background-color: transparent; /* Allows main page gradient to show through */
+  position: relative; /* For absolute positioning of leaves */
+}
+
+.discover-main-content-row { /* New wrapper for the two columns */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligns items to the top within this row */
+  width: 100%;
+  padding-bottom: 50px; /* Space between this row and the beauty refined section */
 }
 
 .discover-image-column {
@@ -56,11 +86,11 @@
 
 .discover-main-image {
   width: 100%;
-  max-width: 500px; /* Adjust as needed */
+  max-width: 900px; /* Adjusted from 900px for better layout and responsiveness */
   height: auto;
   border-radius: 10px; /* Slight roundness */
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: -30px; /* Adjusted value to push it up or down */
 }
 
 .discover-content-column {
@@ -69,12 +99,13 @@
   flex-direction: column;
   align-items: flex-start; /* Align text to the left */
   padding-left: 40px; /* Space between image and text */
+  padding-top: 20px; /* Add some top padding to align content with image visually */
 }
 
 .discover-main-heading {
   font-family: 'Playfair Display', serif; /* Assuming a serif font from image */
   font-size: 2.5rem;
-  color: #333; /* Dark text */
+  color: #eb5672; /* New color from your CSS */
   margin-bottom: 40px; /* Space below heading */
   letter-spacing: 1px;
 }
@@ -93,26 +124,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: transparent; /* Ensure transparent background */
 }
 
 .feature-icon {
-  width: 70px; /* Size of icons */
-  height: 70px;
+  width: 70px; /* Size of icons from your CSS */
+  height: 70px; /* Size of icons from your CSS */
   margin-bottom: 15px;
-  /* Add styling for the stroke/outline if icons are SVG */
+  object-fit: contain; /* Ensure icons fit without cropping */
 }
 
 .feature-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Font size from your CSS */
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .feature-description {
-  font-size: 0.95rem;
-  color: #777;
-  line-height: 1.5;
+  font-size: 0.95rem; /* Font size from your CSS */
+  color: #525151;
+  line-height: 1.3;
   text-align: center; /* Center align description text */
 }
 
@@ -120,7 +152,9 @@
 .discover-buttons {
   display: flex;
   gap: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 20px; /* Margin bottom from your CSS */
+  width: 100%; /* Ensure buttons span their container */
+  justify-content: center; /* Center buttons within their column */
 }
 
 .catalogue-button,
@@ -135,29 +169,39 @@
 }
 
 .catalogue-button {
-  background-color: transparent;
-  color: #7B4C38; /* Brownish text for catalogue */
+  background-color: #e48294; /* New background color from your CSS */
+  color: white; /* New text color from your CSS */
 }
 
 .catalogue-button:hover {
-  background-color: #f0f0f0;
+  background-color: #eb5672; /* New hover color from your CSS */
 }
 
 .readmore-button {
-  background-color: #7B4C38; /* Dark brown from image */
+  background-color: #e48294; /* New background color from your CSS */
   color: white;
   border: 1px solid #7B4C38;
 }
 
 .readmore-button:hover {
-  background-color: #5a3a2c;
+  background-color: #eb5672; /* New hover color from your CSS */
 }
 
 /* Your Beauty Refined Section */
+.beauty-refined-section {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px; /* Space from the content row above */
+  width: 100%;
+  max-width: 600px; /* Control width for readability */
+}
+
 .beauty-refined-heading {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   color: #333;
+  margin-top: -350px;
+  margin-left: -650px;
   margin-bottom: 20px;
 }
 
@@ -165,6 +209,7 @@
   font-size: 1rem;
   color: #666;
   line-height: 1.6;
+  margin-left: -260px;
   max-width: 500px; /* Control line length for readability */
 }
 
@@ -178,30 +223,35 @@
     margin-left: 15px;
     font-size: 1.1rem;
   }
-  .discover-new-you-section {
+  .discover-main-content-row {
     flex-direction: column; /* Stack columns on smaller screens */
     padding: 30px 20px;
+    align-items: center; /* Center items when stacked */
   }
   .discover-image-column {
     padding-right: 0;
     margin-bottom: 30px;
     justify-content: center; /* Center image when stacked */
   }
+  .discover-main-image {
+    margin-top: 0; /* Reset margin top on smaller screens */
+  }
   .discover-content-column {
     padding-left: 0;
+    padding-top: 0;
     align-items: center; /* Center content when stacked */
     text-align: center; /* Center text */
   }
   .discover-features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
   }
   .discover-main-heading {
     font-size: 2.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
-  .beauty-refined-heading {
-    font-size: 1.8rem;
+  .beauty-refined-section {
+    display: none;
   }
 }
 
@@ -226,7 +276,7 @@
     margin-top: 10px;
   }
   .discover-main-image {
-    max-width: 400px;
+    max-width: 350px;
   }
   .discover-main-heading {
     font-size: 1.8rem;
@@ -237,17 +287,14 @@
   .discover-buttons {
     flex-direction: column; /* Stack buttons */
     gap: 15px;
-    width: 80%; /* Make buttons wider */
+    width: 80%;
   }
   .catalogue-button,
   .readmore-button {
     width: 100%;
   }
-  .beauty-refined-heading {
-    font-size: 1.5rem;
-  }
-  .beauty-refined-description {
-    font-size: 0.9rem;
+  .beauty-refined-section {
+    display: none;
   }
 }
 
@@ -266,8 +313,19 @@
     font-size: 1.2rem;
     margin-left: 10px;
   }
+  .leaf {
+    width: 80px;
+  }
+  .leaf.top-left {
+    top: 100px;
+    left: 10px;
+  }
+  .leaf.bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
   .discover-main-image {
-    max-width: 300px;
+    max-width: 280px;
   }
   .discover-main-heading {
     font-size: 1.5rem;
@@ -277,12 +335,12 @@
     height: 60px;
   }
   .feature-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .feature-description {
     font-size: 0.85rem;
   }
-  .beauty-refined-heading {
-    font-size: 1.3rem;
+  .beauty-refined-section {
+    display: none;
   }
 }
