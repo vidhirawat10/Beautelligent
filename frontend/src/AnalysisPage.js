@@ -1,28 +1,83 @@
 // src/AnalysisPage.js
-import React from 'react';
-// import { Link } from 'react-router-dom'; // Import Link for proper navigation
+import React, { useState } from 'react'; // Import useState
+import { Link } from 'react-router-dom'; // Import Link for proper navigation
 import './AnalysisPage.css';
+
+// Existing Assets
 import leafSvg from './assets/leaf.svg';
-import womanFaceImage from './assets/analysispg.png'; // Assuming this is your image path for the left section
-// Placeholder icons - YOU NEED TO REPLACE THESE WITH ACTUAL SVG/PNG IMPORTS
-import faceIcon from './assets/capture.png'; // Updated to generic 'faceIcon' based on CSS button names
-import bodyIcon from './assets/analysis.png'; // Updated to generic 'bodyIcon' based on CSS button names
-import noseIcon from './assets/recommend.png'; // Updated to generic 'noseIcon' based on CSS button names
+import womanFaceImage from './assets/analysispg.png';
+
+// NEW ASSETS FOR MODAL (Assuming these paths based on common asset structures)
+import instructionWomanImage from './assets/instructionWomanImage.png'; // Please ensure this path is correct
+import glassesIcon from './assets/glassesIcon.png'; // Please ensure this path is correct
+import lightbulbIcon from './assets/lightbulbIcon.png'; // Please ensure this path is correct
+import lipstickIcon from './assets/lipstickIcon.png'; // Please ensure this path is correct
+import faceOutlineIcon from './assets/faceOutlineIcon.png'; // Please ensure this path is correct
+
+// Existing Feature Icons (updated to .png as per your latest provided code)
+import faceIcon from './assets/capture.png';
+import bodyIcon from './assets/analysis.png';
+import noseIcon from './assets/recommend.png'; // Changed to .png
 
 export default function AnalysisPage() {
+  // State to control Instructions modal visibility
+  const [showInstructionsModal, setShowInstructionsModal] = useState(false);
+  // State to control Consent modal visibility (NEW)
+  const [showConsentModal, setShowConsentModal] = useState(false);
+  // State for Consent Checkbox (NEW)
+  const [isConsentChecked, setIsConsentChecked] = useState(false);
+
+  const handlePhotoDiagnosticClick = () => {
+    setShowInstructionsModal(true);
+  };
+
+  // Handler for Live Diagnostic button (NEW)
+  const handleLiveDiagnosticClick = () => {
+    setShowConsentModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowInstructionsModal(false); // Close instructions modal
+    setShowConsentModal(false);     // Close consent modal
+    setIsConsentChecked(false);     // Reset checkbox on close
+  };
+
+  const handleGetStartedClick = () => {
+    // Here you would add logic to proceed to the next step for Photo Diagnostic,
+    // e.g., navigate to a camera page or trigger file upload.
+    console.log("Get Started clicked! (Implement camera/upload logic here for Photo Diagnostic)");
+    setShowInstructionsModal(false);
+  };
+
+  // Handler for Consent Checkbox (NEW)
+  const handleConsentChange = (event) => {
+    setIsConsentChecked(event.target.checked);
+  };
+
+  // Handler for Submit button in Consent Modal (NEW)
+  const handleSubmitConsent = () => {
+    if (isConsentChecked) {
+      console.log("Consent granted! Proceeding to live diagnostic.");
+      setShowConsentModal(false);
+      // Here you would navigate to the live camera page or activate camera feed
+      // Example: navigate('/live-camera'); (Requires a new route in App.js)
+    } else {
+      alert("Please grant consent to proceed with Live Diagnostic.");
+    }
+  };
+
   return (
     <div className="analysis-page-container">
-      {/* Navbar - Kept as is based on your instruction to "keep navbar similar" */}
+      {/* Navbar - Converted to Link for proper SPA navigation */}
       <nav className="navbar analysis-navbar">
         <div className="logo analysis-logo">BEAUTELLIGENT</div>
         <div className="nav-links analysis-nav-links">
-          {/* Consider converting these to <Link to="..."> for proper SPA navigation */}
-          <a href="/">Home</a>
-          <a href="/technology">Our Technology</a>
-          <a href="/products">Products</a>
-          <a href="/team">Team</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/technology">Our Technology</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/team">Team</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/contact">Contact</Link>
         </div>
         <div className="icons analysis-icons">
           <span className="icon">🔍</span>
@@ -33,12 +88,11 @@ export default function AnalysisPage() {
 
       {/* Add the leaf images */}
       <img src={leafSvg} alt="Decorative Leaf" className="leaf top-left" />
-      <img src={leafSvg} alt="Decorative Leaf" className="leaf bottom-right" /> {/* New leaf */}
+      <img src={leafSvg} alt="Decorative Leaf" className="leaf bottom-right" />
 
-      {/* Main content section - redesigned to match the image */}
+      {/* Main content section */}
       <section className="discover-new-you-section">
-
-        <div className="discover-main-content-row"> {/* New wrapper for the two columns */}
+        <div className="discover-main-content-row">
           <div className="discover-image-column">
             <img src={womanFaceImage} alt="Woman's Face" className="discover-main-image" />
           </div>
@@ -48,21 +102,21 @@ export default function AnalysisPage() {
 
             <div className="discover-features-grid">
               <div className="discover-feature-card">
-                <img src={faceIcon} alt="Face Icon" className="feature-icon" />
+                <img src={faceIcon} alt="Capture Icon" className="feature-icon" />
                 <h3 className="feature-title">Capture</h3>
                 <p className="feature-description">
                   Take or upload face images using live camera or gallery
                 </p>
               </div>
               <div className="discover-feature-card">
-                <img src={bodyIcon} alt="Body Icon" className="feature-icon" />
+                <img src={bodyIcon} alt="Analyze Icon" className="feature-icon" />
                 <h3 className="feature-title">Analyze</h3>
                 <p className="feature-description">
                   AI models detect skin type, acne, pigmentation & other concerns.
                 </p>
               </div>
               <div className="discover-feature-card">
-                <img src={noseIcon} alt="Nose Icon" className="feature-icon" />
+                <img src={noseIcon} alt="Recommend Icon" className="feature-icon" />
                 <h3 className="feature-title">Recommend</h3>
                 <p className="feature-description">
                   Personalized skincare routine & product suggestions are displayed.
@@ -71,23 +125,101 @@ export default function AnalysisPage() {
             </div>
 
             <div className="discover-buttons">
-              <button className="catalogue-button">📷 Photo Diagnostic</button> {/* Changed class */}
-              <button className="readmore-button">🎥 Live Diagnostic</button> {/* Changed class */}
+              <button
+                className="catalogue-button"
+                onClick={handlePhotoDiagnosticClick} // Photo Diagnostic button click handler
+              >
+                📷 Photo Diagnostic
+              </button>
+              <button
+                className="readmore-button"
+                onClick={handleLiveDiagnosticClick} // Live Diagnostic button click handler (NEW)
+              >
+                🎥 Live Diagnostic
+              </button>
             </div>
           </div>
-        </div> {/* End discover-main-content-row */}
+        </div>
 
-        {/* Moved outside the two-column structure, but still within discover-new-you-section */}
-        <div className="beauty-refined-section"> {/* New wrapper for this content */}
+        <div className="beauty-refined-section">
           <h3 className="beauty-refined-heading">💖 Your Beauty, Refined</h3>
           <p className="beauty-refined-description">
             Beautelligent uses deep learning and computer vision to analyze your skin like a professional dermatologist. Whether you're at home or on-the-go, you can trust Beautelligent to guide your skincare journey with precision, speed, and smart solutions tailored just for you.
           </p>
         </div>
-
       </section>
-      
 
+      {/* Instructions Modal (Existing) */}
+      {showInstructionsModal && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-button" onClick={handleCloseModal}>&times;</button>
+            <div className="modal-header">
+              <h2>Instructions for Your Photo</h2>
+            </div>
+            <div className="modal-body">
+              <div className="modal-instructions">
+                <div className="instruction-item">
+                  <img src={glassesIcon} alt="Remove Glasses" className="instruction-icon" />
+                  <p>Remove your glasses and ensure your forehead is visible, with no hair covering it.</p>
+                </div>
+                <div className="instruction-item">
+                  <img src={lightbulbIcon} alt="Well-lit Area" className="instruction-icon" />
+                  <p>Take the photo in a well-lit area to ensure clarity.</p>
+                </div>
+                <div className="instruction-item">
+                  <img src={lipstickIcon} alt="Avoid Makeup" className="instruction-icon" />
+                  <p>Avoid wearing makeup for the most accurate analysis results.</p>
+                </div>
+                <div className="instruction-item">
+                  <img src={faceOutlineIcon} alt="Face Directly" className="instruction-icon" />
+                  <p>Face the camera directly and position your face with full coverage of camera</p>
+                </div>
+              </div>
+              <div className="modal-image">
+                <img src={instructionWomanImage} alt="Woman for Instructions"/>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button className="modal-get-started-button" onClick={handleGetStartedClick}>
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Notice and Consent Modal (NEW) */}
+      {showConsentModal && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content consent-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-button" onClick={handleCloseModal}>&times;</button>
+            <div className="modal-header">
+              <h2>Notice and Consent</h2>
+            </div>
+            <div className="modal-body consent-modal-body">
+              <p>This website utilizes AI and machine learning for skin analysis. In order to perform this analysis, we require access to your live camera feed to capture your image. The captured image will be processed solely for analysis purposes. By granting your consent, you allow us to capture and process the image visible on your screen. Please confirm your consent below to proceed.</p>
+              <label className="consent-checkbox-container">
+                <input
+                  type="checkbox"
+                  checked={isConsentChecked}
+                  onChange={handleConsentChange}
+                />
+                <span className="checkbox-custom"></span> {/* Custom checkbox visual */}
+                I allow the website to capture my image for analysis
+              </label>
+            </div>
+            <div className="modal-footer">
+              <button
+                className="modal-get-started-button" /* Reusing button style */
+                onClick={handleSubmitConsent}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -187,33 +187,6 @@
   background-color: #eb5672; /* New hover color from your CSS */
 }
 
-/* Your Beauty Refined Section */
-.beauty-refined-section {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 50px; /* Space from the content row above */
-  width: 100%;
-  max-width: 600px; /* Control width for readability */
-}
-
-.beauty-refined-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #333;
-  margin-top: -350px;
-  margin-left: -650px;
-  margin-bottom: 20px;
-}
-
-.beauty-refined-description {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-left: -260px;
-  max-width: 500px; /* Control line length for readability */
-}
-
-
 /* --- Responsive Adjustments --- */
 @media (max-width: 1024px) {
   .analysis-navbar {
@@ -344,3 +317,373 @@
     display: none;
   }
 }
+
+/* --- New CSS for Instructions Modal --- */
+
+.modal-overlay {
+  position: fixed; /* Covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything else */
+  backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background */
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  width: 60%; /* Max width for responsiveness */
+  max-width: 700px; /* A good size for the modal */
+  padding: 30px;
+  position: relative; /* For positioning the close button */
+  animation: fadeInScale 0.3s ease-out forwards; /* Simple animation */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack header, body, footer */
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #888;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1; /* Adjust to prevent extra space around the 'x' */
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+  color: #333;
+}
+
+.modal-header {
+  text-align: left; /* Align header text to left */
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin: 0; /* Remove default margin */
+}
+
+.modal-body {
+  display: flex; /* For instruction column and image column */
+  gap: 40px; /* Space between the two columns */
+  align-items: center; /* Vertically align content */
+  margin-bottom: 30px;
+  flex-grow: 1; /* Allow body to take available space */
+}
+
+.modal-instructions {
+  flex: 1; /* Take equal space */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Space between instruction items */
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start; /* Align icon and text at the top */
+  gap: 20px;
+}
+
+.instruction-icon {
+  width: 70px; /* Adjust icon size as needed */
+  height: 70px; /* Keep aspect ratio */
+  object-fit: contain;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.instruction-item p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0; /* Remove default paragraph margin */
+}
+
+.modal-image {
+  flex: 1; /* Take equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px; /* Space from instructions */
+}
+
+.modal-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee; /* Subtle separator */
+}
+
+.modal-get-started-button {
+  background-color: #eb5672; /* Pink color from your design */
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 200px;
+}
+
+.modal-get-started-button:hover {
+  background-color: #d64060; /* Slightly darker pink on hover */
+}
+
+/* Animation for modal */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.beauty-refined-section {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 80px; /* Increased space from the content row above */
+  width: 100%;
+  max-width: 700px; /* Control width for readability */
+  margin-left: auto; /* Center it */
+  margin-right: auto; /* Center it */
+  /* Remove these problematic properties: */
+  /* margin-top: -350px; */
+  /* margin-left: -650px; */
+}
+
+.beauty-refined-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  /* Removed negative margins */
+  margin-top: 0; /* Reset */
+  margin-left: 0; /* Reset */
+}
+
+.beauty-refined-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  /* Removed negative margin */
+  margin-left: 0; /* Reset */
+  max-width: 600px; /* Control line length for readability */
+  margin-left: auto; /* Center text within its container */
+  margin-right: auto; /* Center text within its container */
+}
+
+/* --- Responsive Adjustments for Modal --- */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .modal-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .modal-body {
+    flex-direction: column; /* Stack instructions and image */
+    gap: 20px;
+  }
+
+  .modal-image {
+    display: none; /* Remove left padding when stacked */
+  }
+
+  .instruction-item {
+    gap: 15px;
+  }
+
+  .instruction-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .instruction-item p {
+    font-size: 1rem;
+  }
+
+  .modal-get-started-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .instruction-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .instruction-item p {
+    font-size: 0.9rem;
+  }
+}
+
+.consent-modal-body {
+  display: flex;
+  flex-direction: column; /* Stack text and checkbox vertically */
+  gap: 20px; /* Space between paragraph and checkbox */
+  align-items: flex-start; /* Align text and checkbox to the left */
+  text-align: left; /* Ensure text is left-aligned */
+  padding: 0 10px; /* Slight horizontal padding for text */
+}
+
+.consent-modal-body p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0; /* Remove default margin */
+}
+
+/* Custom Checkbox Styling */
+.consent-checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative; /* Needed for custom checkbox positioning */
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #333;
+  user-select: none; /* Prevent text selection */
+  padding-left: 35px; /* Space for the custom checkbox */
+}
+
+.consent-checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0; /* Hide default checkbox */
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-custom {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 25px; /* Size of custom checkbox */
+  width: 25px;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.consent-checkbox-container:hover input ~ .checkbox-custom {
+  background-color: #ddd;
+}
+
+/* Checked state */
+.consent-checkbox-container input:checked ~ .checkbox-custom {
+  background-color: #eb5672; /* Pink background when checked */
+  border-color: #eb5672;
+}
+
+/* Checkmark itself */
+.checkbox-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.consent-checkbox-container input:checked ~ .checkbox-custom:after {
+  display: block;
+}
+
+/* Style the checkmark */
+.consent-checkbox-container .checkbox-custom:after {
+  left: 8px; /* Position of the checkmark */
+  top: 3px;
+  width: 7px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+
+/* --- Responsive Adjustments for Consent Modal --- */
+@media (max-width: 768px) {
+  .consent-modal-content {
+    /* Inherits from .modal-content, but you can override if needed */
+    width: 85%;
+    max-width: 450px;
+  }
+
+  .consent-modal-body p,
+  .consent-checkbox-container {
+    font-size: 1rem; /* Slightly smaller text */
+  }
+
+  .checkbox-custom {
+    height: 22px;
+    width: 22px;
+  }
+  .consent-checkbox-container .checkbox-custom:after {
+    left: 7px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consent-modal-content {
+    width: 70%;
+  }
+
+  .consent-modal-body p,
+  .consent-checkbox-container {
+    font-size: 0.9rem; /* Even smaller text on very small screens */
+  }
+
+  .checkbox-custom {
+    height: 20px;
+    width: 20px;
+  }
+  .consent-checkbox-container .checkbox-custom:after {
+    left: 6px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+  }
+  .consent-checkbox-container {
+    padding-left: 30px; /* Adjust padding for smaller checkbox */
+  }
+}
+
+
