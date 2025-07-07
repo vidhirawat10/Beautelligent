@@ -5,9 +5,9 @@ import './AnalysisPage.css';
 import leafSvg from './assets/leaf.svg';
 import womanFaceImage from './assets/analysispg.png'; // Assuming this is your image path for the left section
 // Placeholder icons - YOU NEED TO REPLACE THESE WITH ACTUAL SVG/PNG IMPORTS
-import faceIcon from './assets/capture.svg'; // Updated to generic 'faceIcon' based on CSS button names
-import bodyIcon from './assets/analysis.svg'; // Updated to generic 'bodyIcon' based on CSS button names
-import noseIcon from './assets/recommend.svg'; // Updated to generic 'noseIcon' based on CSS button names
+import faceIcon from './assets/capture.png'; // Updated to generic 'faceIcon' based on CSS button names
+import bodyIcon from './assets/analysis.png'; // Updated to generic 'bodyIcon' based on CSS button names
+import noseIcon from './assets/recommend.png'; // Updated to generic 'noseIcon' based on CSS button names
 
 export default function AnalysisPage() {
   return (

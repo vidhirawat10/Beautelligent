@@ -105,7 +105,7 @@
 .discover-main-heading {
   font-family: 'Playfair Display', serif; /* Assuming a serif font from image */
   font-size: 2.5rem;
-  color: #eb5672; /* New color from your CSS */
+  color: #61232e; /* New color from your CSS */
   margin-bottom: 40px; /* Space below heading */
   letter-spacing: 1px;
 }
@@ -128,22 +128,22 @@
 }
 
 .feature-icon {
-  width: 70px; /* Size of icons from your CSS */
-  height: 70px; /* Size of icons from your CSS */
-  margin-bottom: 15px;
+  width: 100px; /* Size of icons from your CSS */
+  height: 100px; /* Size of icons from your CSS */
+  margin-bottom: 5px;
   object-fit: contain; /* Ensure icons fit without cropping */
 }
 
 .feature-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem; /* Font size from your CSS */
-  color: #555;
+  color: #373737;
   margin-bottom: 5px;
 }
 
 .feature-description {
   font-size: 0.95rem; /* Font size from your CSS */
-  color: #525151;
+  color: #4a4848;
   line-height: 1.3;
   text-align: center; /* Center align description text */
 }
