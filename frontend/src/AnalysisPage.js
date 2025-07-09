@@ -1,6 +1,6 @@
 // src/AnalysisPage.js
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import './AnalysisPage.css';
 
 // Existing Assets
@@ -24,7 +24,7 @@ export default function AnalysisPage() {
   const [showConsentModal, setShowConsentModal] = useState(false);
   const [isConsentChecked, setIsConsentChecked] = useState(false);
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handlePhotoDiagnosticClick = () => {
     setShowInstructionsModal(true);
@@ -40,22 +40,21 @@ export default function AnalysisPage() {
     setIsConsentChecked(false);
   };
 
-  // Modified handler to navigate to '/upload-image'
   const handleGetStartedClick = () => {
-    setShowInstructionsModal(false); // Close the modal
-    navigate('/upload-image'); // Redirect to the new page
+    setShowInstructionsModal(false);
+    navigate('/upload-image');
   };
 
   const handleConsentChange = (event) => {
     setIsConsentChecked(event.target.checked);
   };
 
+  // *** MODIFIED FUNCTION ***
   const handleSubmitConsent = () => {
     if (isConsentChecked) {
       console.log("Consent granted! Proceeding to live diagnostic.");
       setShowConsentModal(false);
-      // Here you would navigate to the live camera page or activate camera feed
-      // navigate('/live-camera'); // Example: Requires a new route in App.js
+      navigate('/capture-image'); // <--- NEW: Redirect to CaptureImage page
     } else {
       alert("Please grant consent to proceed with Live Diagnostic.");
     }
@@ -184,7 +183,7 @@ export default function AnalysisPage() {
         </div>
       )}
 
-      {/* Notice and Consent Modal (NEW) */}
+      {/* Notice and Consent Modal (Existing, now redirects to CaptureImage) */}
       {showConsentModal && (
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content consent-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -200,7 +199,7 @@ export default function AnalysisPage() {
                   checked={isConsentChecked}
                   onChange={handleConsentChange}
                 />
-                <span className="checkbox-custom"></span> {/* Custom checkbox visual */}
+                <span className="checkbox-custom"></span>
                 I allow the website to capture my image for analysis
               </label>
             </div>
