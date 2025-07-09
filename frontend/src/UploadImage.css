@@ -5,20 +5,24 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* Already pinkish gradient, keeping it */
     background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%);
     padding: 20px;
     box-sizing: border-box;
 }
 
 .upload-form-card {
-    background: linear-gradient(to top, #fff2f6 70%, #de94ae 100%);
+    /* Main card background, slightly darker pink/rose */
+    background-color: #fce4ec; /* Very light pink */
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Prominent border matching active/accent pink */
+    border: 5px solid #eb5672;
     width: 100%;
     max-width: 900px; /* Adjust as needed */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Ensure rounded corners apply to children */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Re-adding a subtle shadow */
 }
 
 .form-content {
@@ -31,7 +35,8 @@
 .file-upload-section {
     flex: 1;
     min-width: 300px; /* Minimum width before wrapping */
-    border: 2px dashed #a0c4ff; /* Light blue dashed border */
+    /* Dashed border with a pinkish tint */
+    border: 2px dashed #ce6381;
     border-radius: 10px;
     padding: 30px;
     display: flex;
@@ -39,19 +44,21 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #e0efff; /* Very light blue background */
+    /* Light pink background for upload area */
+    background-color: #ffe8ee;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .file-upload-section.drag-over {
-    border-color: #007bff;
-    background-color: #cce0ff;
+    border-color: #eb5672; /* Active pink on drag over */
+    background-color: #ffdce6; /* Slightly darker pink on drag over */
 }
 
 .upload-icon {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
+    /* You might want to tint the SVG icon itself to a pinkish hue using SVG filters or directly in the SVG code for full consistency. */
 }
 
 .upload-icon img {
@@ -63,18 +70,19 @@
 .drop-file-text {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #333;
+    color: #4a4848; /* Darker text for contrast */
     margin-bottom: 10px;
 }
 
 .or-text {
     font-size: 1rem;
-    color: #666;
+    color: #7b7b7b;
     margin-bottom: 15px;
 }
 
 .upload-file-button {
-    background-color: #007bff;
+    /* Button with your main pink accent color */
+    background-color: #eb5672;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -86,12 +94,12 @@
 }
 
 .upload-file-button:hover {
-    background-color: #0056b3;
+    background-color: #d64060; /* Darker pink on hover */
 }
 
 .supported-files-text {
     font-size: 0.85rem;
-    color: #888;
+    color: #a0a0a0;
     margin-top: 20px;
 }
 
@@ -104,9 +112,10 @@
 
 .basic-info-section h2 {
     font-size: 2rem;
-    color: #333;
+    color: #61232e; /* Dark red-pink from your AnalysisPage */
     margin-bottom: 30px;
     font-weight: 700;
+    font-family: 'Playfair Display', serif; /* Consistent font for headings */
 }
 
 .form-group {
@@ -116,7 +125,7 @@
 .form-group label {
     display: block;
     font-size: 0.95rem;
-    color: #555;
+    color: #4a4848; /* Darker text for contrast */
     margin-bottom: 8px;
     font-weight: 500;
 }
@@ -125,17 +134,19 @@
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #f6cfda; /* Pinkish border */
     border-radius: 8px;
     font-size: 1rem;
     box-sizing: border-box; /* Include padding in width */
+    background-color: #fffafc; /* Slightly off-white for inputs */
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: #1a1919;
 }
 
 .form-group input[type="text"]:focus,
 .form-group textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    border-color: #eb5672; /* Active pink on focus */
+    box-shadow: 0 0 0 3px rgba(235, 86, 114, 0.25); /* Pink shadow on focus */
     outline: none;
 }
 
@@ -160,30 +171,31 @@
 .button-group-label {
     display: block;
     font-size: 0.95rem;
-    color: #555;
+    color: #201f1f; /* Darker text for contrast */
     margin-bottom: 8px;
     font-weight: 500;
 }
 
 .selection-button {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #fef0f4; /* Very light pink unselected */
+    color: #302e2e;
     padding: 10px 20px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #f6cfda; /* Lighter pink border */
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .selection-button.selected {
-    background-color: #e0f2ff; /* Light blue selected state */
-    border-color: #007bff;
-    color: #007bff;
+    background-color: #eb5672; /* Active pink selected state */
+    border-color: #eb5672;
+    color: white; /* White text for selected */
     font-weight: 600;
 }
 
 .selection-button:hover:not(.selected) {
-    background-color: #e8e8e8;
+    background-color: #ffe0e9; /* Slightly darker pink on hover for unselected */
+    border-color: #de94ae;
 }
 
 .private-event-checkbox {
@@ -195,12 +207,12 @@
 .private-event-checkbox input[type="checkbox"] {
     margin-right: 10px;
     transform: scale(1.2); /* Make checkbox slightly larger */
-    accent-color: #007bff; /* Color for the checkbox */
+    accent-color: #eb5672; /* Pink color for the checkbox */
 }
 
 .private-event-checkbox label {
     font-size: 1rem;
-    color: #555;
+    color: #4a4848; /* Darker text for contrast */
 }
 
 .next-button-container {
@@ -209,7 +221,7 @@
 }
 
 .next-button {
-    background-color: #007bff;
+    background-color: #eb5672; /* Main pink accent color */
     color: white;
     padding: 12px 30px;
     border: none;
@@ -224,13 +236,13 @@
 }
 
 .next-button:hover {
-    background-color: #0056b3;
+    background-color: #d64060; /* Darker pink on hover */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .upload-form-card {
-        margin: 10px;
+        margin: 1px;
     }
 
     .form-content {
@@ -239,7 +251,10 @@
         gap: 30px;
     }
 
-    .file-upload-section,
+    .file-upload-section{
+        min-width: unset; /* Remove min-width to allow full flexibility */
+        width: 83%;
+    }
     .basic-info-section {
         min-width: unset; /* Remove min-width to allow full flexibility */
         width: 100%;
