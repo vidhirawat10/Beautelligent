@@ -1,66 +1,61 @@
 // src/AnalysisPage.js
-import React, { useState } from 'react'; // Import useState
-import { Link } from 'react-router-dom'; // Import Link for proper navigation
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 import './AnalysisPage.css';
 
 // Existing Assets
 import leafSvg from './assets/leaf.svg';
 import womanFaceImage from './assets/analysispg.png';
 
-// NEW ASSETS FOR MODAL (Assuming these paths based on common asset structures)
-import instructionWomanImage from './assets/instructionWomanImage.png'; // Please ensure this path is correct
-import glassesIcon from './assets/glassesIcon.png'; // Please ensure this path is correct
-import lightbulbIcon from './assets/lightbulbIcon.png'; // Please ensure this path is correct
-import lipstickIcon from './assets/lipstickIcon.png'; // Please ensure this path is correct
-import faceOutlineIcon from './assets/faceOutlineIcon.png'; // Please ensure this path is correct
+// NEW ASSETS FOR MODAL
+import instructionWomanImage from './assets/instructionWomanImage.png';
+import glassesIcon from './assets/glassesIcon.png';
+import lightbulbIcon from './assets/lightbulbIcon.png';
+import lipstickIcon from './assets/lipstickIcon.png';
+import faceOutlineIcon from './assets/faceOutlineIcon.png';
 
-// Existing Feature Icons (updated to .png as per your latest provided code)
+// Existing Feature Icons
 import faceIcon from './assets/capture.png';
 import bodyIcon from './assets/analysis.png';
-import noseIcon from './assets/recommend.png'; // Changed to .png
+import noseIcon from './assets/recommend.png';
 
 export default function AnalysisPage() {
-  // State to control Instructions modal visibility
   const [showInstructionsModal, setShowInstructionsModal] = useState(false);
-  // State to control Consent modal visibility (NEW)
   const [showConsentModal, setShowConsentModal] = useState(false);
-  // State for Consent Checkbox (NEW)
   const [isConsentChecked, setIsConsentChecked] = useState(false);
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handlePhotoDiagnosticClick = () => {
     setShowInstructionsModal(true);
   };
 
-  // Handler for Live Diagnostic button (NEW)
   const handleLiveDiagnosticClick = () => {
     setShowConsentModal(true);
   };
 
   const handleCloseModal = () => {
-    setShowInstructionsModal(false); // Close instructions modal
-    setShowConsentModal(false);     // Close consent modal
-    setIsConsentChecked(false);     // Reset checkbox on close
-  };
-
-  const handleGetStartedClick = () => {
-    // Here you would add logic to proceed to the next step for Photo Diagnostic,
-    // e.g., navigate to a camera page or trigger file upload.
-    console.log("Get Started clicked! (Implement camera/upload logic here for Photo Diagnostic)");
     setShowInstructionsModal(false);
+    setShowConsentModal(false);
+    setIsConsentChecked(false);
   };
 
-  // Handler for Consent Checkbox (NEW)
+  // Modified handler to navigate to '/upload-image'
+  const handleGetStartedClick = () => {
+    setShowInstructionsModal(false); // Close the modal
+    navigate('/upload-image'); // Redirect to the new page
+  };
+
   const handleConsentChange = (event) => {
     setIsConsentChecked(event.target.checked);
   };
 
-  // Handler for Submit button in Consent Modal (NEW)
   const handleSubmitConsent = () => {
     if (isConsentChecked) {
       console.log("Consent granted! Proceeding to live diagnostic.");
       setShowConsentModal(false);
       // Here you would navigate to the live camera page or activate camera feed
-      // Example: navigate('/live-camera'); (Requires a new route in App.js)
+      // navigate('/live-camera'); // Example: Requires a new route in App.js
     } else {
       alert("Please grant consent to proceed with Live Diagnostic.");
     }
@@ -127,13 +122,13 @@ export default function AnalysisPage() {
             <div className="discover-buttons">
               <button
                 className="catalogue-button"
-                onClick={handlePhotoDiagnosticClick} // Photo Diagnostic button click handler
+                onClick={handlePhotoDiagnosticClick}
               >
                 📷 Photo Diagnostic
               </button>
               <button
                 className="readmore-button"
-                onClick={handleLiveDiagnosticClick} // Live Diagnostic button click handler (NEW)
+                onClick={handleLiveDiagnosticClick}
               >
                 🎥 Live Diagnostic
               </button>
@@ -211,7 +206,7 @@ export default function AnalysisPage() {
             </div>
             <div className="modal-footer">
               <button
-                className="modal-get-started-button" /* Reusing button style */
+                className="modal-get-started-button"
                 onClick={handleSubmitConsent}
               >
                 Submit
