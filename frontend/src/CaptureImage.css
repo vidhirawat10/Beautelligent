@@ -1,0 +1,220 @@
+/* src/CaptureImage.css */
+
+.capture-image-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%); /* Pinkish gradient */
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.capture-page-header {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #61232e; /* Darker pinkish tone for heading */
+    font-family: 'Playfair Display', serif; /* Consistent heading font */
+}
+
+.capture-content-card {
+    background-color: #fce4ec; /* Light pink for the card background */
+    border-radius: 20px;
+    border: 5px solid #eb5672; /* Accent pink border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    gap: 40px; /* Space between instruction and capture boxes */
+    padding: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    box-sizing: border-box;
+}
+
+.instructions-box {
+    flex: 1; /* Takes equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: #fefafa; /* Almost white background for instructions */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.instructions-box h3 {
+    font-size: 1.5rem;
+    color: #61232e; /* Darker pinkish tone for subheading */
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: flex-start; /* Align icon and text at the top */
+    margin-bottom: 20px;
+    gap: 15px;
+    text-align: left;
+}
+
+.instruction-icon {
+    width: 35px; /* Adjust icon size */
+    height: 35px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    object-fit: contain;
+}
+
+.instruction-item p {
+    font-size: 0.95rem;
+    color: #4a4848;
+    line-height: 1.5;
+}
+
+.camera-capture-box {
+    flex: 1; /* Takes equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between camera frame and captured image */
+    box-sizing: border-box;
+}
+
+.live-diagnostic-frame {
+    background-color: #fffafc; /* Light pinkish background for the frame */
+    border: 3px solid #eb5672; /* Accent pink border */
+    border-radius: 15px;
+    width: 100%;
+    /* Aspect ratio for video, adjust as needed. 4:3 */
+    padding-top: 75%; /* (3 / 4) * 100% */
+    position: relative; /* For absolutely positioning video */
+    overflow: hidden; /* Ensure content respects border-radius */
+    display: flex; /* For placeholder content centering */
+    justify-content: center;
+    align-items: center;
+    color: #b36b7b;
+    font-weight: 600;
+}
+
+/* Placeholder for actual video */
+.live-diagnostic-frame .placeholder-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+}
+
+
+.captured-image-display {
+    background-color: #fefafa; /* Almost white background for captured image area */
+    border: 2px dashed #f6cfda; /* Lighter pink dashed border */
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 150px; /* Minimum height for this section */
+    box-sizing: border-box;
+}
+
+.captured-image-display p {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+}
+
+.upload-image-button {
+    background-color: #eb5672; /* Accent pink for the button */
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-image-button:hover {
+    background-color: #d64060; /* Darker pink on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .capture-content-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .instructions-box,
+    .camera-capture-box {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .capture-page-header {
+        font-size: 1.5rem;
+    }
+
+    .instructions-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .live-diagnostic-frame {
+        padding-top: 60%; /* Adjust aspect ratio for smaller screens if needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .capture-image-page-container {
+        padding: 15px;
+    }
+    .capture-page-header {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    .capture-content-card {
+        padding: 15px;
+    }
+    .instructions-box {
+        padding: 20px;
+    }
+    .instructions-box h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .instruction-item {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .instruction-icon {
+        width: 30px;
+        height: 30px;
+    }
+    .instruction-item p {
+        font-size: 0.85rem;
+    }
+    .camera-capture-box {
+        gap: 20px;
+    }
+    .captured-image-display {
+        padding: 15px;
+        min-height: 120px;
+    }
+    .upload-image-button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
