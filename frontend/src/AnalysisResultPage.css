@@ -1,0 +1,209 @@
+/* src/AnalysisResultPage.css */
+
+.analysis-result-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%); /* Pinkish gradient */
+    padding: 30px 20px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.analysis-result-header {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #61232e; /* Dark pink heading */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.analysis-result-subtext {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.analysis-result-content-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px; /* Max width for the content grid */
+}
+
+.image-card,
+.results-card {
+    background-color: #fce4ec; /* Light pink background for cards */
+    border-radius: 20px;
+    border: 5px solid #eb5672; /* Accent pink border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Distribute space */
+    min-width: 300px; /* Minimum width before wrapping */
+    box-sizing: border-box;
+}
+
+.image-card h3,
+.results-card h3 {
+    font-size: 1.6rem;
+    color: #61232e;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.your-skin-image-wrapper {
+    width: 100%;
+    max-width: 350px; /* Max width for the image */
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #fefafa; /* Background for placeholder */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px; /* Minimum height for aspect ratio */
+}
+
+.your-skin-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure image fits without cropping */
+    display: block;
+}
+
+.skin-type-text {
+    font-size: 1.1rem;
+    color: #4a4848;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.result-item {
+    background-color: #ffe0e9; /* Light pink for result items */
+    border-radius: 10px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #4a4848;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #f6cfda;
+}
+
+.result-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #eb5672; /* Accent pink for numbers */
+    margin-top: 5px;
+}
+
+.action-button {
+    background-color: #eb5672; /* Accent pink for buttons */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px; /* Space between buttons */
+}
+
+.action-button:hover {
+    background-color: #d64060; /* Darker pink on hover */
+}
+
+.action-button:last-child {
+    margin-bottom: 0; /* No margin for the last button */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    .analysis-result-content-grid {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+    .image-card,
+    .results-card {
+        width: 90%; /* Take more width on smaller screens */
+        max-width: 450px; /* Constrain individual card width */
+    }
+}
+
+@media (max-width: 600px) {
+    .analysis-result-header {
+        font-size: 1.8rem;
+    }
+    .analysis-result-subtext {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .image-card,
+    .results-card {
+        padding: 20px;
+        min-width: unset;
+    }
+    .image-card h3,
+    .results-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    .your-skin-image-wrapper {
+        min-height: 200px;
+    }
+    .skin-type-text {
+        font-size: 1rem;
+    }
+    .results-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on smaller screens */
+        gap: 10px;
+    }
+    .result-item {
+        padding: 12px 8px;
+        font-size: 0.85rem;
+    }
+    .result-value {
+        font-size: 1.1rem;
+    }
+    .action-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .analysis-result-page-container {
+        padding: 15px;
+    }
+    .results-grid {
+        grid-template-columns: 1fr; /* Stack results in a single column on very small screens */
+    }
+}
