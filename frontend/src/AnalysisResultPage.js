@@ -38,8 +38,8 @@ function AnalysisResultPage() {
 
     const handleCheckRecommendations = () => {
         console.log("Checking recommendations...");
-        // Implement navigation to recommendations page or display recommendations
-        alert("Navigating to recommendations! (Not implemented yet)");
+        // Navigate to the RecommendationsPage, passing the image data
+        navigate('/recommendations', { state: { imageData: uploadedImageSrc } });
     };
 
     const handleTryAgain = () => {

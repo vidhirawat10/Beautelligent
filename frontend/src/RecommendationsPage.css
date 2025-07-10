@@ -1,0 +1,307 @@
+/* src/RecommendationsPage.css */
+
+.recommendations-page-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%); /* Pinkish gradient */
+    padding: 20px 15px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    overflow-y: auto; /* Allow scrolling if content is still too tall, but aim to avoid it */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+.recommendations-header {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #61232e;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    text-align: center;
+    z-index: 1;
+}
+
+.recommendations-subtext {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.recommendations-content-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px; /* Increased max-width to allow content to spread more */
+    z-index: 1;
+}
+
+/* Card Styling */
+.skincare-routine-card,
+.products-section {
+    background-color: #fce4ec;
+    border-radius: 15px;
+    border: 4px solid #eb5672;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skincare-routine-card.routine-only-card {
+    flex: 1; /* Allow it to grow */
+    min-width: 350px; /* Slightly increase min-width for better content display */
+    max-width: 40%; /* Explicitly set max-width to take up less than half */
+}
+
+.skincare-routine-card h3,
+.products-section h3 {
+    font-size: 1.6rem;
+    color: #61232e;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.routine-steps-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.routine-step-item {
+    background-color: #ffe0e9;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #f6cfda;
+}
+
+.routine-step-item h4 {
+    font-size: 1.1rem;
+    color: #eb5672;
+    margin-bottom: 4px;
+}
+
+.routine-step-item p {
+    font-size: 0.9rem;
+    color: #4a4848;
+    line-height: 1.4;
+}
+
+
+/* Products Section */
+.products-section {
+    flex: 2; /* Products section takes more proportional space */
+    min-width: 500px; /* Increased min-width for better product grid display */
+    max-width: 50%; /* Explicitly set max-width to take up more than half */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #ffe0e9;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #f6cfda;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-image-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #61232e;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    font-size: 0.8rem;
+    color: #4a4848;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.view-product-button {
+    background-color: #eb5672;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 90%;
+    max-width: 130px;
+}
+
+.view-product-button:hover {
+    background-color: #d64060;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) { /* Adjusted breakpoint for wider layout */
+    .recommendations-content-grid {
+        max-width: 95%; /* Allow it to take more width on slightly smaller desktops */
+    }
+    .skincare-routine-card.routine-only-card {
+        max-width: 45%;
+    }
+    .products-section {
+        max-width: 50%; /* Adjusted for better balance */
+    }
+}
+
+@media (max-width: 1024px) {
+    .recommendations-content-grid {
+        flex-direction: column; /* Stack sections on medium screens */
+        align-items: center;
+        gap: 25px;
+        max-width: 90%; /* Ensure it's not too wide when stacked */
+    }
+    .skincare-routine-card.routine-only-card,
+    .products-section {
+        width: 100%; /* Take full width of the grid container when stacked */
+        max-width: 550px; /* Constrain max width for stacked sections */
+        min-width: unset; /* Remove min-width to allow flexibility */
+    }
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .recommendations-header {
+        font-size: 1.8rem;
+    }
+    .recommendations-subtext {
+        font-size: 0.95rem;
+    }
+    .skincare-routine-card h3,
+    .products-section h3 {
+        font-size: 1.4rem;
+    }
+    .routine-step-item h4 {
+        font-size: 1rem;
+    }
+    .routine-step-item p {
+        font-size: 0.85rem;
+    }
+    .product-name {
+        font-size: 0.95rem;
+    }
+    .product-description {
+        font-size: 0.75rem;
+    }
+    .view-product-button {
+        padding: 7px 15px;
+        font-size: 0.8rem;
+    }
+    .leaf-background-svg {
+        width: 100px;
+        height: 100px;
+    }
+    .leaf-background-svg.top-left {
+        top: -20px;
+        left: -20px;
+    }
+    .leaf-background-svg.bottom-right {
+        bottom: -20px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendations-page-container {
+        padding: 15px 10px;
+    }
+    .recommendations-header {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .recommendations-subtext {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    .skincare-routine-card,
+    .products-section {
+        padding: 12px;
+        width: 100%;
+    }
+    .skincare-routine-card h3,
+    .products-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .routine-step-item {
+        padding: 10px;
+    }
+    .routine-step-item h4 {
+        font-size: 0.95rem;
+    }
+    .routine-step-item p {
+        font-size: 0.8rem;
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .product-image-wrapper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+    .product-name {
+        font-size: 0.9rem;
+    }
+    .product-description {
+        font-size: 0.7rem;
+    }
+    .view-product-button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}
