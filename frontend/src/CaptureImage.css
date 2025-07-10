@@ -12,6 +12,38 @@
     color: #333;
 }
 
+/* src/CaptureImage.css */
+
+/* ... (your existing CSS for .capture-image-page-container, etc.) ... */
+
+/* Add this new rule for the SVG positioning */
+.leaf-background-svg {
+    position: absolute; /* Position relative to the nearest positioned ancestor, which could be capture-image-page-container or body */
+    top: 0; /* Adjust these values to position your leaves */
+    left: 0; /* Adjust these values to position your leaves */
+    width: 100%; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    pointer-events: none; /* Allows mouse events to pass through the SVG to elements underneath */
+    z-index: 0; /* Ensure it's behind other content. Adjust if you want it on top of some elements. */
+    overflow: hidden; /* Important if the leaves extend beyond their desired area */
+}
+
+/* ... (rest of your existing CSS) ... */
+
+/* You might need to make .capture-image-page-container position: relative; if you want the SVG to be positioned *within* it */
+.capture-image-page-container {
+    position: relative; /* Add this line */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fff2f6 70%, #de94ae 100%); /* Pinkish gradient */
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
 .capture-page-header {
     width: 100%;
     max-width: 900px;
@@ -93,24 +125,45 @@
     border: 3px solid #eb5672; /* Accent pink border */
     border-radius: 15px;
     width: 100%;
-    /* Aspect ratio for video, adjust as needed. 4:3 */
-    padding-top: 75%; /* (3 / 4) * 100% */
+    padding-top: 75%; /* (3 / 4) * 100% for 4:3 aspect ratio */
     position: relative; /* For absolutely positioning video */
     overflow: hidden; /* Ensure content respects border-radius */
-    display: flex; /* For placeholder content centering */
-    justify-content: center;
-    align-items: center;
+    /* REMOVED: display: flex; justify-content: center; align-items: center;
+       These are no longer needed on the parent, as the video will be absolute.
+       The placeholder text will still be centered due to its absolute positioning.
+    */
     color: #b36b7b;
     font-weight: 600;
 }
 
+/* Style for the video element when active */
+.live-diagnostic-frame video.active-video-stream {
+    position: absolute; /* Position the video absolutely within the frame */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* These styles are also set inline, but having them here makes it explicit
+       and acts as a fallback/reinforcement. The inline `display` property handles visibility.
+    */
+    object-fit: cover; /* Ensures video covers the area, cropping if necessary */
+    transform: scaleX(-1); /* Flips video for front camera view */
+    display: block !important; /* Ensure it overrides any default 'display: none' from .inactive-video-stream */
+}
+
+/* Style for the video element when inactive (used by JS to hide it) */
+.live-diagnostic-frame video.inactive-video-stream {
+    display: none !important; /* Explicitly hide it */
+}
+
 /* Placeholder for actual video */
 .live-diagnostic-frame .placeholder-text {
-    position: absolute;
+    position: absolute; /* Keep placeholder text centered */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.1rem;
+    z-index: 1; /* Ensure placeholder text is above the video if both are rendered for a split second */
 }
 
 

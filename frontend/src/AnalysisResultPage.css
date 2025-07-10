@@ -148,7 +148,7 @@
 /* Responsive adjustments */
 @media (max-width: 850px) {
     .analysis-result-content-grid {
-        flex-direction: column; /* Stack cards vertically */
+        flex-direction: row; /* Stack cards vertically */
         align-items: center;
     }
     .image-card,

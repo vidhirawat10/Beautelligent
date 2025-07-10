@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './AnalysisResultPage.css'; // Import the new CSS
 
+// Import the Leaf SVG as a React Component
+import { ReactComponent as LeafSvg } from './assets/leaf.svg'; // Make sure this path is correct
+
 function AnalysisResultPage() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -47,6 +50,10 @@ function AnalysisResultPage() {
 
     return (
         <div className="analysis-result-page-container">
+            {/* Render the LeafSvg component here */}
+            {/* You'll need to style this component in AnalysisResultPage.css to position it */}
+            <LeafSvg className="leaf-background-svg" /> 
+
             <h1 className="analysis-result-header">LIVE SKIN ANALYSIS</h1>
             <p className="analysis-result-subtext">
                 Integrate skin analysis online seamlessly with our AI Skin Analyzer. Assess concerns, skin type, and age in real time.

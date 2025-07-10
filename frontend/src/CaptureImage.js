@@ -8,6 +8,9 @@ import lightbulbIcon from './assets/lightbulbIcon.png';
 import lipstickIcon from './assets/lipstickIcon.png';
 import faceOutlineIcon from './assets/faceOutlineIcon.png';
 
+// Import the SVG as a React Component
+import { ReactComponent as LeafSvg } from './assets/leaf.svg'; 
+
 function CaptureImage() {
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
@@ -126,6 +129,10 @@ function CaptureImage() {
 
     return (
         <div className="capture-image-page-container">
+            {/* Render the LeafSvg component here */}
+            {/* You'll need to style this component in CaptureImage.css to position it */}
+            <LeafSvg className="leaf-background-svg" /> 
+
             <h1 className="capture-page-header">Welcome to Live Diagnostic Tool</h1>
 
             <div className="capture-content-card">

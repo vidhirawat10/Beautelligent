@@ -6,6 +6,9 @@ import './UploadImage.css'; // Import the new CSS file
 // Assuming you have an SVG for the upload cloud icon
 import uploadCloudIcon from './assets/upload.svg'; // Make sure this path is correct
 
+// Import the Leaf SVG as a React Component
+import { ReactComponent as LeafSvg } from './assets/leaf.svg'; 
+
 function UploadImage() {
     const [dragOver, setDragOver] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
@@ -99,6 +102,10 @@ function UploadImage() {
 
     return (
         <div className="upload-image-page-container">
+            {/* Render the LeafSvg component here */}
+            {/* You'll need to style this component in UploadImage.css to position it */}
+            <LeafSvg className="leaf-background-svg" /> 
+
             <div className="upload-form-card">
                 {/* Removed form-header-tabs and form-header-controls as per image_c94a74.png context */}
                 {/* The provided image for UploadImage page does not show these elements, so they are omitted for consistency. */}
