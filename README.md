@@ -108,8 +108,8 @@ npm start
 ---
 
 ## 🙋‍♀️ Meet the Creator
-Made with ❤️ by Vidhi Rawat
-🧠 ML-DS Enthusiast | Web Developer 
+Made with ❤️ by
+<br> Vidhi Rawat || Vaishnavi Sinha || Yachika || Yashika
 
 ---
 
