@@ -1,0 +1,90 @@
+[
+    {
+        "product_id": "P001",
+        "name": "Gentle Hydrating Cream Cleanser",
+        "category": "Cleanser",
+        "key_ingredients": ["Glycerin", "Ceramides"],
+        "benefits": ["Hydrating", "Non-stripping", "Soothing"],
+        "texture": "Cream",
+        "skin_types_suited_for": ["Dry", "Normal", "Combination", "Sensitive"],
+        "concerns_addressed": ["Dehydration", "Redness"],
+        "application_notes": "Apply to damp skin, massage gently for 60 seconds, rinse well with lukewarm water."
+    },
+    {
+        "product_id": "P002",
+        "name": "Salicylic Acid Foaming Cleanser",
+        "category": "Cleanser",
+        "key_ingredients": ["Salicylic Acid (BHA)", "Niacinamide"],
+        "benefits": ["Acne-fighting", "Oil Control", "Exfoliating"],
+        "texture": "Foam/Gel",
+        "skin_types_suited_for": ["Oily", "Combination", "Acne-Prone"],
+        "concerns_addressed": ["Acne", "Blackheads", "Enlarged Pores", "Oiliness"],
+        "application_notes": "Use a small amount on damp skin, lather, and rinse thoroughly. Avoid eye area."
+    },
+    {
+        "product_id": "P003",
+        "name": "Hyaluronic Acid Hydrating Serum",
+        "category": "Serum",
+        "key_ingredients": ["Hyaluronic Acid", "Vitamin B5"],
+        "benefits": ["Intense Hydration", "Plumping", "Smoothening"],
+        "texture": "Gel",
+        "skin_types_suited_for": ["All Skin Types"],
+        "concerns_addressed": ["Dehydration", "Fine Lines", "Dullness"],
+        "application_notes": "Apply a few drops to damp face after cleansing. Follow with moisturizer."
+    },
+    {
+        "product_id": "P004",
+        "name": "Niacinamide 10% + Zinc 1% Serum",
+        "category": "Serum",
+        "key_ingredients": ["Niacinamide", "Zinc PCA"],
+        "benefits": ["Pore Minimizing", "Oil Regulation", "Brightening", "Anti-inflammatory"],
+        "texture": "Lightweight Serum",
+        "skin_types_suited_for": ["Oily", "Combination", "Acne-Prone"],
+        "concerns_addressed": ["Acne", "Enlarged Pores", "Redness", "Oiliness", "Pigmentation"],
+        "application_notes": "Apply a few drops morning and night before heavier creams. Patch test if sensitive."
+    },
+    {
+        "product_id": "P005",
+        "name": "Lightweight Gel Moisturizer",
+        "category": "Moisturizer",
+        "key_ingredients": ["Hyaluronic Acid", "Ceramides"],
+        "benefits": ["Lightweight Hydration", "Non-comedogenic", "Oil-free"],
+        "texture": "Gel",
+        "skin_types_suited_for": ["Oily", "Combination", "Normal"],
+        "concerns_addressed": ["Dehydration"],
+        "application_notes": "Apply a small amount to face and neck morning and night."
+    },
+    {
+        "product_id": "P006",
+        "name": "Rich Barrier Repair Moisturizer",
+        "category": "Moisturizer",
+        "key_ingredients": ["Shea Butter", "Ceramides", "Cholesterol"],
+        "benefits": ["Deep Hydration", "Barrier Support", "Nourishing"],
+        "texture": "Cream",
+        "skin_types_suited_for": ["Dry", "Sensitive"],
+        "concerns_addressed": ["Dryness", "Compromised Barrier", "Redness"],
+        "application_notes": "Apply a generous amount to face and neck morning and night, especially on dry patches."
+    },
+    {
+        "product_id": "P007",
+        "name": "Broad-Spectrum Daily SPF 30",
+        "category": "SPF",
+        "key_ingredients": ["Zinc Oxide", "Titanium Dioxide"],
+        "benefits": ["Sun Protection", "Prevents Pigmentation", "Anti-aging"],
+        "texture": "Lotion",
+        "skin_types_suited_for": ["All Skin Types"],
+        "concerns_addressed": ["Sun Protection", "Pigmentation", "Premature Aging"],
+        "application_notes": "Apply generously as the last step in your morning routine. Reapply every 2 hours when exposed to sun."
+    },
+    {
+        "product_id": "P008",
+        "name": "Alpha Arbutin 2% + HA Serum",
+        "category": "Treatment",
+        "key_ingredients": ["Alpha Arbutin", "Hyaluronic Acid"],
+        "benefits": ["Reduces Dark Spots", "Evens Skin Tone", "Brightening"],
+        "texture": "Lightweight Serum",
+        "skin_types_suited_for": ["All Skin Types"],
+        "concerns_addressed": ["Pigmentation", "Dark Spots", "Uneven Skin Tone"],
+        "application_notes": "Apply a few drops morning and night. Use SPF daily when using this product."
+    }
+]

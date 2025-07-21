@@ -1,0 +1,13 @@
+# Core Libraries for ML/CV
+numpy
+opencv-python                 # For computer vision operations (webcam, image processing)
+scikit-learn                  # If your ML models were trained with scikit-learn
+tensorflow                    # If your ML models use TensorFlow/Keras
+Pillow                        # For image manipulation
+
+# For managing environment variables (highly recommended)
+python-dotenv
+
+# For a web framework (if you plan to have a web interface/API, e.g., Flask)
+Flask
+requests # If your app needs to make HTTP requests

@@ -1,0 +1,95 @@
+[
+    {
+        "rule_id": "R001_OilyAcne",
+        "skin_type": "Oily",
+        "conditions": ["Acne"],
+        "description": "Recommendations for Oily skin with Acne.",
+        "recommendations": {
+            "products": [
+                {"product_id": "P002"},  
+                {"product_id": "P004"},  
+                {"product_id": "P005"},  
+                {"product_id": "P007"}  
+            ],
+            "am_routine": [
+                {"step_id": "RTS001", "notes": "Use a foaming/gel cleanser with Salicylic Acid."},
+                {"step_id": "RTS002", "notes": "Apply Niacinamide serum for oil control and redness."},
+                {"step_id": "RTS003", "notes": "Use an oil-free gel moisturizer."},
+                {"step_id": "RTS004", "notes": "Don't skip SPF, even on cloudy days."}
+            ],
+            "pm_routine": [
+                {"step_id": "RTS005", "notes": "Double cleanse to remove sunscreen/makeup and excess oil."},
+                {"step_id": "RTS002", "notes": "Apply Niacinamide serum."},
+                {"step_id": "RTS006", "notes": "Consider a spot treatment for active breakouts."},
+                {"step_id": "RTS003", "notes": "Use an oil-free gel moisturizer."}
+            ],
+            "tips": [
+                "Avoid touching your face frequently to prevent spreading bacteria.",
+                "Change your pillowcases regularly.",
+                "Ensure your makeup is non-comedogenic."
+            ]
+        }
+    },
+    {
+        "rule_id": "R002_DryPigmentation",
+        "skin_type": "Dry",
+        "conditions": ["Pigmentation", "Dark Spots"],
+        "description": "Recommendations for Dry skin with Pigmentation and Dark Spots.",
+        "recommendations": {
+            "products": [
+                {"product_id": "P001"},  
+                {"product_id": "P003"},  
+                {"product_id": "P008"},  
+                {"product_id": "P006"},  
+                {"product_id": "P007"}  
+            ],
+            "am_routine": [
+                {"step_id": "RTS001", "notes": "Use a hydrating cream cleanser."},
+                {"step_id": "RTS002", "notes": "Apply Hyaluronic Acid serum to damp skin for hydration."},
+                {"step_id": "RTS002", "notes": "Follow with Alpha Arbutin serum to target dark spots."},
+                {"step_id": "RTS003", "notes": "Use a rich, nourishing moisturizer."},
+                {"step_id": "RTS004", "notes": "Consistent daily SPF is vital for pigmentation."}
+            ],
+            "pm_routine": [
+                {"step_id": "RTS001", "notes": "Cleanse gently to avoid stripping skin."},
+                {"step_id": "RTS002", "notes": "Apply Alpha Arbutin serum."},
+                {"step_id": "RTS003", "notes": "Use a rich barrier-repair moisturizer."}
+            ],
+            "tips": [
+                "Sun protection is paramount to prevent worsening pigmentation.",
+                "Be patient, fading dark spots takes time and consistency.",
+                "Avoid harsh scrubs or strong actives that can irritate dry skin."
+            ]
+        }
+    },
+    {
+        "rule_id": "R003_Normal",
+        "skin_type": "Normal",
+        "conditions": [],
+        "description": "Basic routine for Normal skin with no major concerns.",
+        "recommendations": {
+            "products": [
+                {"product_id": "P001"},  
+                {"product_id": "P003"},  
+                {"product_id": "P005"},  
+                {"product_id": "P007"}   
+            ],
+            "am_routine": [
+                {"step_id": "RTS001", "notes": "A gentle cleanse is sufficient."},
+                {"step_id": "RTS002", "notes": "Hydrating serum for balance."},
+                {"step_id": "RTS003", "notes": "Lightweight moisturizer for daily hydration."},
+                {"step_id": "RTS004", "notes": "Daily SPF is a must for prevention."}
+            ],
+            "pm_routine": [
+                {"step_id": "RTS001", "notes": "Cleanse thoroughly to remove impurities."},
+                {"step_id": "RTS002", "notes": "Hydrating serum."},
+                {"step_id": "RTS003", "notes": "Lightweight moisturizer."}
+            ],
+            "tips": [
+                "Consistency is key, even with 'good' skin.",
+                "Listen to your skin; adjust products if needed based on climate or lifestyle.",
+                "Explore adding a Vitamin C serum in the AM for antioxidant benefits."
+            ]
+        }
+    }
+]

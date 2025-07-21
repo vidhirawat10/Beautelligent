@@ -1,0 +1,56 @@
+[
+    {
+        "step_id": "RTS001",
+        "name": "Cleansing",
+        "time_of_day": ["AM", "PM"],
+        "order": 1,
+        "instructions": "Gently wash your face using lukewarm water. Use a cleanser suitable for your skin type.",
+        "product_category_suggestion": "Cleanser",
+        "ingredient_suggestion": null
+    },
+    {
+        "step_id": "RTS002",
+        "name": "Serum Application",
+        "time_of_day": ["AM", "PM"],
+        "order": 2,
+        "instructions": "Apply a few drops of your chosen serum to slightly damp skin. Gently pat until absorbed.",
+        "product_category_suggestion": "Serum",
+        "ingredient_suggestion": null
+    },
+    {
+        "step_id": "RTS003",
+        "name": "Moisturizing",
+        "time_of_day": ["AM", "PM"],
+        "order": 3,
+        "instructions": "Take a pea-sized amount of moisturizer and gently massage it onto your face and neck.",
+        "product_category_suggestion": "Moisturizer",
+        "ingredient_suggestion": null
+    },
+    {
+        "step_id": "RTS004",
+        "name": "Sun Protection (SPF)",
+        "time_of_day": ["AM"],
+        "order": 4,
+        "instructions": "This is the most crucial step for daytime. Apply a generous amount of broad-spectrum SPF to your face, neck, and ears as the last step of your routine.",
+        "product_category_suggestion": "SPF",
+        "ingredient_suggestion": null
+    },
+    {
+        "step_id": "RTS005",
+        "name": "Double Cleansing",
+        "time_of_day": ["PM"],
+        "order": 1,
+        "instructions": "First, use an oil-based cleanser to break down makeup/sunscreen. Rinse. Then, follow with a water-based cleanser.",
+        "product_category_suggestion": "Cleanser (Oil-based, then Water-based)",
+        "ingredient_suggestion": null
+    },
+    {
+        "step_id": "RTS006",
+        "name": "Targeted Treatment",
+        "time_of_day": ["PM"],
+        "order": 2,
+        "instructions": "Apply specific treatments for acne or pigmentation to affected areas, or as an all-over treatment if prescribed. Follow product instructions carefully.",
+        "product_category_suggestion": "Treatment",
+        "ingredient_suggestion": null
+    }
+]
