@@ -50,23 +50,20 @@ Images Stored & Analyzed by ML Models
 ---
 
 ## 📁 Project Structure
+
 beautelligent/
-<br>
-├── client/ # React Frontend
-<br>
-├── server/ # Flask API
-<br>
-│ ├── models/ # Trained ML models
-<br>
-│ ├── routes/ # API endpoints
-<br>
-│ └── utils/ # Image preprocessing, etc.
-<br>
-├── data/ # Dataset folders
-<br>
-├── test/ # Test images
-<br>
-└── README.md
+├── frontend/                  # React frontend for user interface  
+├── recommendation_system/    # Contains logic and scripts for recommendation system  
+├── main_app.py               # Main Flask app (entry point for backend)  
+├── requirements.txt          # Python dependencies  
+├── .env                      # Environment variables  
+├── 1.py                      # Miscellaneous script (initial testing/logic)  
+├── 2.py                      # Miscellaneous script (initial testing/logic)  
+├── test1.jpg                 # Sample input image for testing  
+├── testd.png                 # Another test image  
+├── README.md                 # Project documentation  
+└── __pycache__/              # Compiled Python cache files  
+
 
 
 ---
