@@ -110,6 +110,7 @@ npm start
 ## 🙋‍♀️ Meet the Creator
 Made with ❤️ by
 <br> Vidhi Rawat || Vaishnavi Sinha || Yachika || Yashika
+<br>
 ✉️ [Email – Vidhi](mailto:vidhirawat54@gmail.com) • [Email – Vaishnavi](mailto:vaishnavisinha476@gmail.com )
 
 ---
