@@ -111,7 +111,7 @@ npm start
 Made with ❤️ by
 <br> Vidhi Rawat || Vaishnavi Sinha || Yachika || Yashika
 <br>
-✉️ [Email – Vidhi](mailto:vidhirawat54@gmail.com) • [Email – Vaishnavi](mailto:vaishnavisinha476@gmail.com )
+✉️ [Email – Vidhi](mailto:vidhirawat54@gmail.com) • [Email – Vaishnavi](mailto:vaishnavisinha476@gmail.com ) • [Email – Yachika](mailto:Yachikarajput55@gmail.com)
 
 ---
 
