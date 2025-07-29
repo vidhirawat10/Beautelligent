@@ -51,7 +51,7 @@ Images Stored & Analyzed by ML Models
 
 ## 📁 Project Structure
 
-beautelligent/
+beautelligent/<br>
 ├── frontend/                  # React frontend for user interface  
 ├── recommendation_system/    # Contains logic and scripts for recommendation system  
 ├── main_app.py               # Main Flask app (entry point for backend)  
