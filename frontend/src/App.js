@@ -7,7 +7,7 @@ import AnalysisPage from './AnalysisPage';
 import UploadImage from './UploadImage';
 import CaptureImage from './CaptureImage';
 import AnalysisResultPage from './AnalysisResultPage';
-import RecommendationsPage from './RecommendationsPage'; // Import the new AnalysisResultPage
+import RecommendationsPage from './RecommendationsPage'; 
 
 function App() {
   return (
