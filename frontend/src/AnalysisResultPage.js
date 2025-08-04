@@ -1,17 +1,17 @@
-// src/AnalysisResultPage.js
+
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './AnalysisResultPage.css'; // Import the new CSS
+import './AnalysisResultPage.css'; 
 
-// Import the Leaf SVG as a React Component
-import { ReactComponent as LeafSvg } from './assets/leaf.svg'; // Make sure this path is correct
+
+import { ReactComponent as LeafSvg } from './assets/leaf.svg';
 
 function AnalysisResultPage() {
     const location = useLocation();
     const navigate = useNavigate();
     const [uploadedImageSrc, setUploadedImageSrc] = useState(null);
 
-    // Placeholder data for analysis results
+   
     const analysisResults = {
         spots: 9,
         wrinkles: 56,
