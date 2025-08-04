@@ -1,20 +1,20 @@
-// src/AnalysisPage.js
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './AnalysisPage.css';
 
-// Existing Assets
+
 import leafSvg from './assets/leaf.svg';
 import womanFaceImage from './assets/analysispg.png';
 
-// NEW ASSETS FOR MODAL
+
 import instructionWomanImage from './assets/instructionWomanImage.png';
 import glassesIcon from './assets/glassesIcon.png';
 import lightbulbIcon from './assets/lightbulbIcon.png';
 import lipstickIcon from './assets/lipstickIcon.png';
 import faceOutlineIcon from './assets/faceOutlineIcon.png';
 
-// Existing Feature Icons
+
 import faceIcon from './assets/capture.png';
 import bodyIcon from './assets/analysis.png';
 import noseIcon from './assets/recommend.png';
