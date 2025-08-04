@@ -1,9 +1,9 @@
-// src/UploadImage.js
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './UploadImage.css'; // Import the new CSS file
 
-// Assuming you have an SVG for the upload cloud icon
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import './UploadImage.css'; 
+
+
 import uploadCloudIcon from './assets/upload.svg'; // Make sure this path is correct
 
 // Import the Leaf SVG as a React Component
