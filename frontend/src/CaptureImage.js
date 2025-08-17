@@ -14,7 +14,7 @@ function CaptureImage() {
     const canvasRef = useRef(null);
     const [streamActive, setStreamActive] = useState(false);
     const [capturedImage, setCapturedImage] = useState(null);
-    const [cameraLoading, setCameraLoading] = useState(true); // New state to manage loading message
+    const [cameraLoading, setCameraLoading] = useState(true); 
 
     const stopCamera = useCallback(() => {
         if (videoRef.current && videoRef.current.srcObject) {
