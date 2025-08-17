@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './CaptureImage.css';
 
-// Reuse instruction icons from AnalysisPage assets
 import glassesIcon from './assets/glassesIcon.png';
 import lightbulbIcon from './assets/lightbulbIcon.png';
 import lipstickIcon from './assets/lipstickIcon.png';
