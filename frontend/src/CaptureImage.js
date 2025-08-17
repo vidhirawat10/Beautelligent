@@ -7,7 +7,6 @@ import lightbulbIcon from './assets/lightbulbIcon.png';
 import lipstickIcon from './assets/lipstickIcon.png';
 import faceOutlineIcon from './assets/faceOutlineIcon.png';
 
-// Import the SVG as a React Component
 import { ReactComponent as LeafSvg } from './assets/leaf.svg'; 
 
 function CaptureImage() {
