@@ -1,4 +1,4 @@
-// src/CaptureImage.js
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './CaptureImage.css';
 
