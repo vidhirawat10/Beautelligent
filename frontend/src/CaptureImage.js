@@ -22,7 +22,7 @@ function CaptureImage() {
             tracks.forEach(track => track.stop());
             videoRef.current.srcObject = null;
             setStreamActive(false);
-            setCameraLoading(true); // Reset loading state when camera stops
+            setCameraLoading(true); 
             console.log("Camera stopped.");
         }
     }, []);
