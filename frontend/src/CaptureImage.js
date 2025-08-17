@@ -33,7 +33,7 @@ function CaptureImage() {
             return;
         }
 
-        setCameraLoading(true); // Set loading true when attempting to start camera
+        setCameraLoading(true); 
 
         try {
             const mediaStream = await navigator.mediaDevices.getUserMedia({
